@@ -441,10 +441,8 @@ class TranscribeApp {
         this.statusText.textContent = 'Transcription complete!';
         this.statusIcon.className = 'fas fa-check-circle text-success';
         
-        if (this.eventSource) {
-            this.eventSource.close();
-            this.eventSource = null;
-        }
+        // Keep SSE connection alive for future uploads
+        console.log('✅ [CLIENT] Job completed, keeping SSE connection alive for next upload');
     }
 
     downloadTranscript() {
