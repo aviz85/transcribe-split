@@ -116,6 +116,11 @@ class TranscribeApp {
         try {
             // Start client-side processing
             this.segments = await this.processor.processFile(file);
+            
+            // If we have segments, upload them for transcription
+            if (this.segments && this.segments.length > 0) {
+                await this.handleAllSegmentsComplete(this.segments);
+            }
         } catch (error) {
             console.error('File processing failed:', error);
             this.showError(`Processing failed: ${error.message}`);
