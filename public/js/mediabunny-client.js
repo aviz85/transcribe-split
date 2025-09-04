@@ -18,7 +18,7 @@ class MediaBunnyProcessor {
      * @param {Object} options - Processing options
      */
     async processFile(file, options = {}) {
-        const maxDuration = options.maxDuration || 15 * 60; // 15 minutes in seconds
+        const maxDuration = options.maxDuration || 5 * 60; // 5 minutes in seconds
         
         try {
             this.onProgress?.({ stage: 'initializing', progress: 0 });

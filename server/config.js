@@ -11,5 +11,5 @@ module.exports = {
   PUBLIC_BASE_URL: process.env.PUBLIC_BASE_URL || process.env.REPLIT_DOMAINS ? `https://${process.env.REPLIT_DOMAINS.split(',')[0]}` : `http://localhost:${process.env.PORT || 5000}`,
   UPLOAD_DIR: 'uploads',
   OUTPUT_DIR: 'outputs',
-  SEGMENT_DURATION: 15 * 60, // 15 minutes in seconds
+  SEGMENT_DURATION: 5 * 60, // 5 minutes in seconds
 };
