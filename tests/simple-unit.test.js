@@ -53,13 +53,14 @@ describe('Simple Application Tests', () => {
 
     it('should validate file types', () => {
       const isValidAudioVideo = (mimeType) => {
-        return mimeType && (mimeType.startsWith('audio/') || mimeType.startsWith('video/'));
+        return Boolean(mimeType && (mimeType.startsWith('audio/') || mimeType.startsWith('video/')));
       };
 
       expect(isValidAudioVideo('audio/mp3')).toBe(true);
       expect(isValidAudioVideo('video/mp4')).toBe(true);
       expect(isValidAudioVideo('text/plain')).toBe(false);
-      expect(isValidAudioVideo('')).toBe(false);
+      expect(isValidAudioVideo(null)).toBe(false);
+      expect(isValidAudioVideo(undefined)).toBe(false);
     });
   });
 });

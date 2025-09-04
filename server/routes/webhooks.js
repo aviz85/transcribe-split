@@ -16,10 +16,20 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   let payload;
   
   try {
-    payload = JSON.parse(raw.toString('utf8'));
-    console.log('📝 [ELEVENLABS->SERVER] Webhook payload:', payload);
+    // Handle both raw buffer and already parsed object
+    if (typeof raw === 'object' && raw !== null && !Buffer.isBuffer(raw)) {
+      payload = raw; // Already parsed by Express
+      console.log('📝 [ELEVENLABS->SERVER] Webhook payload (pre-parsed):', JSON.stringify(payload, null, 2));
+    } else {
+      // Parse raw buffer/string
+      const bodyString = Buffer.isBuffer(raw) ? raw.toString('utf8') : String(raw);
+      console.log('📝 [ELEVENLABS->SERVER] Raw webhook body:', bodyString);
+      payload = JSON.parse(bodyString);
+      console.log('📝 [ELEVENLABS->SERVER] Webhook payload (parsed):', JSON.stringify(payload, null, 2));
+    }
   } catch (err) {
-    console.error('❌ [ELEVENLABS->SERVER] Invalid JSON in webhook:', err.message);
+    console.error('❌ [ELEVENLABS->SERVER] Invalid JSON in webhook:', `"${raw}" is not valid JSON`);
+    console.error('❌ [ELEVENLABS->SERVER] Parse error:', err.message);
     return res.status(400).send('Invalid JSON');
   }
 
@@ -32,14 +42,35 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   }
   console.log('✅ [ELEVENLABS->SERVER] Signature verified successfully');
 
-  // ElevenLabs webhook format: { request_id, text, language_code, language_probability, words }
-  const { request_id, text, language_code, language_probability, words } = payload;
+  // ElevenLabs webhook format according to docs:
+  // { type: "speech_to_text", data: { transcript, language, words, etc }, webhook_metadata }
+  let transcriptData, requestId, transcript, language, confidence;
+  
+  if (payload.type === 'speech_to_text' && payload.data) {
+    // New webhook format
+    transcriptData = payload.data;
+    transcript = transcriptData.transcript;
+    language = transcriptData.language;
+    confidence = transcriptData.language_confidence;
+    // Extract request_id from webhook_metadata or filename
+    requestId = payload.webhook_metadata?.request_id || payload.webhook_metadata?.filename;
+    console.log('🔄 [ELEVENLABS->SERVER] Using new webhook format');
+  } else {
+    // Legacy format or direct response
+    const { request_id, text, language_code, language_probability } = payload;
+    requestId = request_id;
+    transcript = text;
+    language = language_code;
+    confidence = language_probability;
+    console.log('🔄 [ELEVENLABS->SERVER] Using legacy webhook format');
+  }
   
   // Extract job info from request_id (which should be the filename we sent)
   // Format: job_{jobId}_segment_{segmentIndex}
-  const filenameMatch = request_id?.match(/job_([^_]+)_segment_(\d+)/);
+  const filenameMatch = requestId?.match(/job_([^_]+)_segment_(\d+)/);
   if (!filenameMatch) {
-    console.warn('⚠️ [ELEVENLABS->SERVER] Cannot parse job info from request_id:', request_id);
+    console.warn('⚠️ [ELEVENLABS->SERVER] Cannot parse job info from request_id:', requestId);
+    console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', Object.keys(payload));
     return res.status(200).send('ok');
   }
   
@@ -47,7 +78,7 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   const actualSegmentIndex = parseInt(filenameMatch[2]);
   
   if (!actualJobId || isNaN(actualSegmentIndex)) {
-    console.warn('⚠️ [ELEVENLABS->SERVER] Invalid job info parsed from request_id:', request_id);
+    console.warn('⚠️ [ELEVENLABS->SERVER] Invalid job info parsed from request_id:', requestId);
     return res.status(200).send('ok');
   }
   
@@ -63,20 +94,20 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
 
   let entry = job.transcriptions.find(t => t.segmentIndex === actualSegmentIndex) || null;
   if (!entry) {
-    entry = { segmentIndex: actualSegmentIndex, taskId: request_id, status: 'processing', text: '' };
+    entry = { segmentIndex: actualSegmentIndex, taskId: requestId, status: 'processing', text: '' };
     job.transcriptions.push(entry);
   }
   
   // ElevenLabs webhook means transcription is completed
   entry.status = 'completed';
-  entry.text = text || '';
-  entry.language = language_code;
-  entry.confidence = language_probability;
+  entry.text = transcript || '';
+  entry.language = language;
+  entry.confidence = confidence;
 
   console.log(`✅ [ELEVENLABS->SERVER] Transcription completed for job ${actualJobId} segment ${actualSegmentIndex}:`, {
-    text: text?.substring(0, 100) + (text?.length > 100 ? '...' : ''),
-    language: language_code,
-    confidence: language_probability
+    text: transcript?.substring(0, 100) + (transcript?.length > 100 ? '...' : ''),
+    language: language,
+    confidence: confidence
   });
   
   // Calculate progress
