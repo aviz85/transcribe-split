@@ -397,14 +397,32 @@
                 script.src = 'https://cdn.jsdelivr.net/npm/@mediabunny/mp3-encoder@1.13.2/dist/bundles/mediabunny-mp3-encoder.js';
                 script.onload = async () => {
                     console.log('🎵 [SETUP] MP3 encoder script loaded');
+                    
+                    // Wait a bit for the encoder to be available
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    
+                    // Try multiple possible encoder registration methods
                     if (window.MediaBunnyMp3Encoder?.registerMp3Encoder) {
+                        console.log('🔧 [SETUP] Registering MP3 encoder (method 1)');
                         window.MediaBunnyMp3Encoder.registerMp3Encoder();
-                        console.log('✅ [SETUP] MP3 encoder registered');
-                        
-                        // Test support
-                        if (window.MediaBunny?.canEncodeAudio) {
-                            const mp3Support = await window.MediaBunny.canEncodeAudio('mp3');
-                            console.log('🔍 [SETUP] MP3 support after encoder:', mp3Support);
+                    } else if (window.MediaBunny?.registerMp3Encoder) {
+                        console.log('🔧 [SETUP] Registering MP3 encoder (method 2)');
+                        window.MediaBunny.registerMp3Encoder();
+                    } else if (window.registerMp3Encoder) {
+                        console.log('🔧 [SETUP] Registering MP3 encoder (method 3)');
+                        window.registerMp3Encoder();
+                    } else {
+                        console.log('⚠️ [SETUP] No MP3 encoder registration method found');
+                        console.log('🔍 [SETUP] Available objects:', Object.keys(window).filter(k => k.includes('Media') || k.includes('Mp3')));
+                    }
+                    
+                    // Wait and test support
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                    if (window.MediaBunny?.canEncodeAudio) {
+                        const mp3Support = await window.MediaBunny.canEncodeAudio('mp3').catch(() => false);
+                        console.log('🔍 [SETUP] MP3 support after encoder:', mp3Support);
+                        if (mp3Support) {
+                            console.log('✅ [SETUP] MP3 encoder successfully registered!');
                         }
                     }
                 };
