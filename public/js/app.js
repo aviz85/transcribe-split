@@ -380,6 +380,20 @@ class TranscribeApp {
         this.eventSource.addEventListener('transcription_complete', (e) => {
             const data = JSON.parse(e.data);
             console.log('📨 [CLIENT] Received transcription:', data);
+            
+            // Check if segment element exists, if not create it (for direct MP3 uploads)
+            const existingSegment = document.querySelector(`[data-segment="${data.segmentIndex}"].segment-transcript`);
+            if (!existingSegment) {
+                console.log('🔧 [CLIENT] Creating missing segment element for direct MP3 upload');
+                this.createSegmentElement({
+                    index: data.segmentIndex,
+                    startTime: 0,
+                    endTime: 0,
+                    duration: 0,
+                    size: 0
+                });
+            }
+            
             this.updateSegmentStatus(data.segmentIndex, 'completed', 'Transcribed');
             this.addTranscription(data.segmentIndex, data.text);
         });
