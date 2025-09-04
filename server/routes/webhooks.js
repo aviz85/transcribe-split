@@ -32,14 +32,22 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   }
   console.log('✅ [ELEVENLABS->SERVER] Signature verified successfully');
 
-  const { jobId, segmentIndex, status, text, taskId, metadata } = payload;
+  // ElevenLabs webhook format: { request_id, text, language_code, language_probability, words }
+  const { request_id, text, language_code, language_probability, words } = payload;
   
-  // Extract from metadata if not in root
-  const actualJobId = jobId || metadata?.jobId;
-  const actualSegmentIndex = segmentIndex !== undefined ? segmentIndex : metadata?.segmentIndex;
+  // Extract job info from request_id (which should be the filename we sent)
+  // Format: job_{jobId}_segment_{segmentIndex}
+  const filenameMatch = request_id?.match(/job_([^_]+)_segment_(\d+)/);
+  if (!filenameMatch) {
+    console.warn('⚠️ [ELEVENLABS->SERVER] Cannot parse job info from request_id:', request_id);
+    return res.status(200).send('ok');
+  }
   
-  if (!actualJobId) {
-    console.warn('⚠️ [ELEVENLABS->SERVER] No jobId in webhook payload');
+  const actualJobId = filenameMatch[1];
+  const actualSegmentIndex = parseInt(filenameMatch[2]);
+  
+  if (!actualJobId || isNaN(actualSegmentIndex)) {
+    console.warn('⚠️ [ELEVENLABS->SERVER] Invalid job info parsed from request_id:', request_id);
     return res.status(200).send('ok');
   }
   
@@ -55,14 +63,22 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
 
   let entry = job.transcriptions.find(t => t.segmentIndex === actualSegmentIndex) || null;
   if (!entry) {
-    entry = { segmentIndex: actualSegmentIndex, taskId, status: 'processing', text: '' };
+    entry = { segmentIndex: actualSegmentIndex, taskId: request_id, status: 'processing', text: '' };
     job.transcriptions.push(entry);
   }
   
-  if (status) entry.status = status;
-  if (text) entry.text = text;
-  if (taskId) entry.taskId = taskId;
+  // ElevenLabs webhook means transcription is completed
+  entry.status = 'completed';
+  entry.text = text || '';
+  entry.language = language_code;
+  entry.confidence = language_probability;
 
+  console.log(`✅ [ELEVENLABS->SERVER] Transcription completed for job ${actualJobId} segment ${actualSegmentIndex}:`, {
+    text: text?.substring(0, 100) + (text?.length > 100 ? '...' : ''),
+    language: language_code,
+    confidence: language_probability
+  });
+  
   // Calculate progress
   const completedCount = job.transcriptions.filter(t => t.status === 'completed').length;
   const totalSegments = job.segments.length;

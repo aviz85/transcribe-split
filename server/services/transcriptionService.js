@@ -15,20 +15,24 @@ async function startElevenLabsTranscription(jobId, segmentIndex, audioBuffer, mi
   const form = new FormData();
   
   form.append('file', audioBuffer, { 
-    filename: `segment_${segmentIndex}.wav`, 
+    filename: `job_${jobId}_segment_${segmentIndex}.wav`, 
     contentType: mime 
   });
-  form.append('webhook_url', webhookUrl);
-  form.append('metadata', JSON.stringify({ jobId, segmentIndex }));
+  form.append('model_id', 'scribe_v1');
+  form.append('webhook', 'true');
+  form.append('diarize', 'true');
+  form.append('timestamp_granularity', 'word');
   
   console.log(`📤 [SERVER->ELEVENLABS] Form data prepared:`, {
-    filename: `segment_${segmentIndex}.wav`,
-    webhookUrl,
-    metadata: { jobId, segmentIndex }
+    filename: `job_${jobId}_segment_${segmentIndex}.wav`,
+    model_id: 'scribe_v1',
+    webhook: true,
+    diarize: true,
+    timestamp_granularity: 'word'
   });
 
-  // Placeholder ElevenLabs Scribe async API. Adjust to official endpoint.
-  const url = 'https://api.elevenlabs.io/v1/speech-to-text/async';
+  // Official ElevenLabs Speech-to-Text API
+  const url = 'https://api.elevenlabs.io/v1/speech-to-text';
   console.log(`🌐 [SERVER->ELEVENLABS] Making API request to: ${url}`);
   
   const resp = await axios.post(url, form, {
