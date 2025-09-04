@@ -141,17 +141,30 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   
   console.log(`📋 [ELEVENLABS->SERVER] Found job ${actualJobId}, current status: ${job.status}`);
 
+  // Initialize transcriptions array if it doesn't exist
+  if (!job.transcriptions) {
+    job.transcriptions = [];
+  }
+  
   let entry = job.transcriptions.find(t => t.segmentIndex === actualSegmentIndex) || null;
   if (!entry) {
     entry = { segmentIndex: actualSegmentIndex, taskId: requestId, status: 'processing', text: '' };
     job.transcriptions.push(entry);
   }
   
-  // ElevenLabs webhook means transcription is completed
+  // ElevenLabs webhook means transcription is completed - just use the text directly!
   entry.status = 'completed';
   entry.text = transcript || '';
   entry.language = language;
   entry.confidence = confidence;
+  
+  console.log('🎉 [ELEVENLABS->SERVER] Transcription saved:', {
+    jobId: actualJobId,
+    segmentIndex: actualSegmentIndex,
+    textPreview: transcript?.substring(0, 100) + '...',
+    language,
+    confidence
+  });
 
   console.log(`✅ [ELEVENLABS->SERVER] Transcription completed for job ${actualJobId} segment ${actualSegmentIndex}:`, {
     text: transcript?.substring(0, 100) + (transcript?.length > 100 ? '...' : ''),
