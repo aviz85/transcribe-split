@@ -376,6 +376,14 @@ class TranscribeApp {
             this.addTranscription(segmentIndex, transcription);
         });
 
+        // Handle transcription_complete events from ElevenLabs webhook
+        this.eventSource.addEventListener('transcription_complete', (e) => {
+            const data = JSON.parse(e.data);
+            console.log('📨 [CLIENT] Received transcription:', data);
+            this.updateSegmentStatus(data.segmentIndex, 'completed', 'Transcribed');
+            this.addTranscription(data.segmentIndex, data.text);
+        });
+
         this.eventSource.addEventListener('segment_error', (e) => {
             const { segmentIndex, error } = JSON.parse(e.data);
             this.updateSegmentStatus(segmentIndex, 'error', error);
