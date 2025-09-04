@@ -4,6 +4,7 @@ const express = require('express');
 const config = require('../config');
 const { jobs, sseSend } = require('../utils/storage');
 const { verifyWebhookSignature } = require('../utils/crypto');
+const { transcriptionTasks } = require('../services/transcriptionService');
 
 const router = express.Router();
 

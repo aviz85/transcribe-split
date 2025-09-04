@@ -30,6 +30,13 @@ class MediaBunnyProcessor {
             
             // Use MediaBunny modules from global object
             const { Input, Output, Conversion, WavOutputFormat, Mp3OutputFormat, BlobSource, BufferTarget, ALL_FORMATS, canEncodeAudio } = window.MediaBunny;
+            
+            // Register MP3 encoder if needed
+            if (window.registerMp3Encoder && !(await canEncodeAudio('mp3'))) {
+                console.log('🎵 [MEDIABUNNY] Registering MP3 encoder...');
+                window.registerMp3Encoder();
+                console.log('✅ [MEDIABUNNY] MP3 encoder registered');
+            }
 
             // Create input from file
             const input = new Input({
