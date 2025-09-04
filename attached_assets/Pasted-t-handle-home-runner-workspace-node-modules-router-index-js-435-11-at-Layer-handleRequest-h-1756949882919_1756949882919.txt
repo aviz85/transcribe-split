@@ -1,0 +1,947 @@
+t handle (/home/runner/workspace/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+🆕 [CLIENT->SERVER] Creating new transcription job: { filename: 'audio', segmentCount: 1 }
+✅ [SERVER->CLIENT] Job created successfully: { jobId: '02a85e61-b7fd-40be-9c2c-9a33a591e52e', segmentCount: 1 }
+🔄 [CLIENT->SERVER] SSE stream connection requested for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e
+📤 [SERVER->CLIENT] SSE stream established for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e, sending initial state
+🔗 [SERVER->CLIENT] SSE client added to job 02a85e61-b7fd-40be-9c2c-9a33a591e52e
+📤 [CLIENT->SERVER] Uploading segment 0 for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e, size: 2043692 bytes
+📥 [SERVER->CLIENT] Segment 0 uploaded for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e
+🚀 [SERVER->ELEVENLABS] Starting transcription for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e segment 0
+🔄 [SERVER->ELEVENLABS] Preparing transcription request for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e segment 0
+📡 [SERVER->ELEVENLABS] Webhook URL: https://a0e262a7-89d2-4bf8-b571-e72d6ae1bef4-00-3myrynbtp2nf6.picard.replit.dev/api/webhooks/elevenlabs
+📊 [SERVER->ELEVENLABS] Audio data size: 2043692 bytes, MIME: audio/wav
+📤 [SERVER->ELEVENLABS] Form data prepared: {
+  filename: 'job_02a85e61-b7fd-40be-9c2c-9a33a591e52e_segment_0.wav',
+  model_id: 'scribe_v1',
+  webhook: true,
+  diarize: true,
+  timestamp_granularity: 'word'
+}
+🌐 [SERVER->ELEVENLABS] Making API request to: https://api.elevenlabs.io/v1/speech-to-text
+✅ [SERVER->CLIENT] Segment upload response sent for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e segment 0
+✅ [ELEVENLABS->SERVER] API response received: {
+  status: 202,
+  statusText: 'Accepted',
+  data: {
+    message: 'Request accepted. Transcription result will be sent to the webhook endpoint.',
+    request_id: 'a1585463f577496a9ce16fb563c27e80',
+    transcription_id: 'IcLUH3csuJrFyvO35K4j'
+  }
+}
+🎯 [ELEVENLABS->SERVER] Task ID received: 1756949844598-0 for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e segment 0
+✅ [ELEVENLABS->SERVER] Transcription started for job 02a85e61-b7fd-40be-9c2c-9a33a591e52e segment 0, taskId: 1756949844598-0
+📨 [ELEVENLABS->SERVER] Webhook received from ElevenLabs
+📊 [ELEVENLABS->SERVER] Headers: {
+  host: 'a0e262a7-89d2-4bf8-b571-e72d6ae1bef4-00-3myrynbtp2nf6.picard.replit.dev',
+  'user-agent': 'ElevenLabs/1.0',
+  'transfer-encoding': 'chunked',
+  accept: '*/*',
+  'accept-encoding': 'gzip, deflate',
+  'content-type': 'application/json',
+  'elevenlabs-signature': 't=1756949846,v0=dcf55a930199bee4fa5efd00e6bb02f1518e8d75907a20b3dabf91778516443f',
+  'x-forwarded-for': '34.59.11.47, 10.81.8.103',
+  'x-forwarded-proto': 'https',
+  'x-replit-user-bio': '',
+  'x-replit-user-id': '',
+  'x-replit-user-name': '',
+  'x-replit-user-profile-image': '',
+  'x-replit-user-roles': '',
+  'x-replit-user-teams': '',
+  'x-replit-user-url': ''
+}
+📝 [ELEVENLABS->SERVER] Webhook payload (pre-parsed): {
+  "type": "speech_to_text_transcription",
+  "event_timestamp": 1756949846,
+  "data": {
+    "request_id": "a1585463f577496a9ce16fb563c27e80",
+    "transcription": {
+      "language_code": "pol",
+      "language_probability": 0.9938738942146301,
+      "text": "Powiedziałam ci, że mu się nie uda. Najważniejsze, że uratował swoje rysunki. Wizy do Ameryki już nie będziemy mieli. Trzeba znaleźć kryjówkę. Przynajmniej dla dziecka. Jeśli on nie potrafi, wydaje mi się, że to ty będziesz musiała znaleźć. Co to jest? Co wy tu zrobiliście? Spójrz jak wyglądasz.",
+      "words": [
+        {
+          "text": "Powiedziałam",
+          "start": 0.119,
+          "end": 0.899,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.899,
+          "end": 0.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ci,",
+          "start": 0.92,
+          "end": 1.059,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.059,
+          "end": 1.099,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "że",
+          "start": 1.099,
+          "end": 1.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.18,
+          "end": 1.179,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "mu",
+          "start": 1.179,
+          "end": 1.3,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.3,
+          "end": 1.299,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "się",
+          "start": 1.299,
+          "end": 1.419,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.419,
+          "end": 1.439,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "nie",
+          "start": 1.439,
+          "end": 1.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.559,
+          "end": 1.599,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "uda.",
+          "start": 1.599,
+          "end": 2.44,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 2.44,
+          "end": 2.459,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Najważniejsze,",
+          "start": 2.46,
+          "end": 3.299,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 3.299,
+          "end": 3.339,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "że",
+          "start": 3.339,
+          "end": 3.459,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 3.459,
+          "end": 3.479,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "uratował",
+          "start": 3.479,
+          "end": 4.019,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 4.019,
+          "end": 4.038,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "swoje",
+          "start": 4.038,
+          "end": 4.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 4.319,
+          "end": 4.319,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "rysunki.",
+          "start": 4.319,
+          "end": 5.399,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 5.399,
+          "end": 5.44,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Wizy",
+          "start": 5.44,
+          "end": 5.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 5.779,
+          "end": 5.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "do",
+          "start": 5.779,
+          "end": 5.899,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 5.899,
+          "end": 5.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Ameryki",
+          "start": 5.96,
+          "end": 6.46,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 6.46,
+          "end": 6.5,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "już",
+          "start": 6.5,
+          "end": 6.679,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 6.679,
+          "end": 6.699,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "nie",
+          "start": 6.699,
+          "end": 6.819,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 6.819,
+          "end": 6.839,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "będziemy",
+          "start": 6.839,
+          "end": 7.239,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 7.239,
+          "end": 7.239,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "mieli.",
+          "start": 7.239,
+          "end": 8.039,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 8.039,
+          "end": 8.039,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Trzeba",
+          "start": 8.039,
+          "end": 8.3,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 8.3,
+          "end": 8.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "znaleźć",
+          "start": 8.36,
+          "end": 8.88,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 8.88,
+          "end": 8.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "kryjówkę.",
+          "start": 8.92,
+          "end": 9.899,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 9.899,
+          "end": 9.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Przynajmniej",
+          "start": 9.92,
+          "end": 10.659,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.659,
+          "end": 10.68,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "dla",
+          "start": 10.68,
+          "end": 10.84,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.84,
+          "end": 10.88,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "dziecka.",
+          "start": 10.88,
+          "end": 11.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 11.979,
+          "end": 12.02,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Jeśli",
+          "start": 12.02,
+          "end": 12.339,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 12.339,
+          "end": 12.42,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "on",
+          "start": 12.42,
+          "end": 12.539,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 12.539,
+          "end": 12.559,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "nie",
+          "start": 12.559,
+          "end": 12.719,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 12.719,
+          "end": 12.739,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "potrafi,",
+          "start": 12.739,
+          "end": 13.219,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.219,
+          "end": 13.239,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "wydaje",
+          "start": 13.239,
+          "end": 13.64,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.64,
+          "end": 13.659,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "mi",
+          "start": 13.659,
+          "end": 13.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.779,
+          "end": 13.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "się,",
+          "start": 13.819,
+          "end": 14.3,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.3,
+          "end": 14.34,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "że",
+          "start": 14.34,
+          "end": 14.46,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.46,
+          "end": 14.5,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "to",
+          "start": 14.5,
+          "end": 14.64,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.64,
+          "end": 14.679,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ty",
+          "start": 14.679,
+          "end": 14.859,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.859,
+          "end": 14.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "będziesz",
+          "start": 14.92,
+          "end": 15.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 15.34,
+          "end": 15.359,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "musiała",
+          "start": 15.359,
+          "end": 15.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 15.739,
+          "end": 15.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "znaleźć.",
+          "start": 15.819,
+          "end": 17.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 17.18,
+          "end": 17.3,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Co",
+          "start": 17.3,
+          "end": 17.5,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 17.5,
+          "end": 17.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "to",
+          "start": 17.619,
+          "end": 17.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 17.779,
+          "end": 17.839,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "jest?",
+          "start": 17.84,
+          "end": 18.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.7,
+          "end": 18.759,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Co",
+          "start": 18.76,
+          "end": 18.939,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.939,
+          "end": 19.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "wy",
+          "start": 19.02,
+          "end": 19.139,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 19.139,
+          "end": 19.199,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "tu",
+          "start": 19.199,
+          "end": 19.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 19.319,
+          "end": 19.399,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "zrobiliście?",
+          "start": 19.399,
+          "end": 20.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 20.979,
+          "end": 21.1,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "Spójrz",
+          "start": 21.1,
+          "end": 21.679,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 21.68,
+          "end": 21.76,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "jak",
+          "start": 21.76,
+          "end": 21.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 21.959,
+          "end": 21.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "wyglądasz.",
+          "start": 21.959,
+          "end": 23.139,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        }
+      ],
+      "channel_index": null,
+      "additional_formats": null,
+      "transcription_id": "IcLUH3csuJrFyvO35K4j"
+    },
+    "webhook_metadata": null
+  }
+}
+🔐 [ELEVENLABS->SERVER] Signature verification: SKIPPED (disabled for development)
+✅ [ELEVENLABS->SERVER] Signature verification bypassed
+🔄 [ELEVENLABS->SERVER] Using actual ElevenLabs webhook format
+📝 [ELEVENLABS->SERVER] Transcription details: {
+  language: 'pol',
+  confidence: 0.9938738942146301,
+  textLength: 296,
+  wordsCount: 95,
+  requestId: 'a1585463f577496a9ce16fb563c27e80'
+}
+⚠️ [ELEVENLABS->SERVER] Cannot find task mapping for request_id: a1585463f577496a9ce16fb563c27e80
+Unhandled error: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at /home/runner/workspace/server/routes/webhooks.js:108:70
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/workspace/node_modules/router/lib/route.js:157:13)
+    at rawParser (/home/runner/workspace/node_modules/body-parser/lib/types/raw.js:43:7)
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/workspace/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/runner/workspace/node_modules/router/lib/route.js:117:3)
+    at handle (/home/runner/workspace/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)

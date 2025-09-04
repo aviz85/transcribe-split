@@ -114,14 +114,15 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
         actualJobId = activeJobs[0]; // Use the first active job
         actualSegmentIndex = 0; // Assume segment 0
         console.log('🚨 [ELEVENLABS->SERVER] Emergency fallback: using active job', actualJobId);
+      } else {
+        // No active jobs - log and return
+        console.log('📝 [ELEVENLABS->SERVER] Transcription received but no active jobs:', {
+          text: transcript?.substring(0, 200) + (transcript?.length > 200 ? '...' : ''),
+          language,
+          confidence
+        });
+        return res.status(200).send('ok');
       }
-      // Don't fail completely - just log the transcription result
-      console.log('📝 [ELEVENLABS->SERVER] Transcription received (orphaned):', {
-        text: transcript?.substring(0, 200) + (transcript?.length > 200 ? '...' : ''),
-        language,
-        confidence
-      });
-      return res.status(200).send('ok');
     }
   }
   
