@@ -49,16 +49,12 @@ class MediaBunnyProcessor {
 
             const { sampleRate, numberOfChannels } = audioTrack;
             
-            // Check if MP3 encoding is supported with optimized settings
-            const mp3Supported = await canEncodeAudio('mp3', { 
-                numberOfChannels: Math.min(numberOfChannels, 2), // Force stereo max
-                sampleRate: 44100, // Standard sample rate for MP3 (44.1kHz)
-                bitrate: 128000 // 128kbps for good quality/size balance
-            }).catch(() => false);
-
-            const outputFormat = mp3Supported ? new Mp3OutputFormat() : new WavOutputFormat();
-            const fileExtension = mp3Supported ? 'mp3' : 'wav';
-            const mimeType = mp3Supported ? 'audio/mpeg' : 'audio/wav';
+            // Always use WAV with lower quality settings to reduce file size
+            // Since ElevenLabs accepts both MP3 and WAV, we can use compressed WAV
+            const outputFormat = new WavOutputFormat();
+            const fileExtension = 'wav';
+            const mimeType = 'audio/wav';
+            const mp3Supported = false; // Force WAV for now
 
             console.log('MediaBunny encoding options:', {
                 mp3Supported,
@@ -104,11 +100,10 @@ class MediaBunnyProcessor {
                         end: endTime
                     },
                     audio: {
-                        codec: mp3Supported ? 'mp3' : undefined, // Explicitly specify MP3 codec
-                        sampleRate: mp3Supported ? 44100 : sampleRate, // Standard 44.1kHz for MP3
-                        numberOfChannels: Math.min(numberOfChannels, 2), // Force stereo max for compatibility
-                        bitrate: mp3Supported ? 128000 : undefined, // 128kbps = ~1MB per minute
-                        forceTranscode: true // Force re-encoding to apply bitrate
+                        sampleRate: 22050, // Lower sample rate for smaller files (half of 44.1kHz)
+                        numberOfChannels: 1, // Force mono to reduce file size by half
+                        bitDepth: 16, // Standard 16-bit depth
+                        forceTranscode: true // Force re-encoding to apply compression
                     }
                 });
 
