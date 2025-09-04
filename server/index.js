@@ -50,8 +50,8 @@ app.use((req, res) => {
   res.status(404).json({ error: 'Not found' });
 });
 
-app.listen(config.PORT, () => {
-  console.log(`🚀 Server listening on http://localhost:${config.PORT}`);
+app.listen(config.PORT, config.HOST, () => {
+  console.log(`🚀 Server listening on http://${config.HOST}:${config.PORT}`);
   console.log(`📁 Upload directory: ${path.resolve(config.UPLOAD_DIR)}`);
   console.log(`📂 Output directory: ${path.resolve(config.OUTPUT_DIR)}`);
   console.log(`🔑 ElevenLabs API configured: ${config.ELEVENLABS_API_KEY !== 'ELEVENLABS_API_KEY_PLACEHOLDER'}`);
