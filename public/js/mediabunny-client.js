@@ -71,7 +71,7 @@ class MediaBunnyProcessor {
             console.log('MediaBunny encoding options:', {
                 mp3Supported,
                 format: fileExtension.toUpperCase(),
-                sampleRate: '22kHz',
+                sampleRate: '16kHz',
                 channels: 'Mono',
                 expectedSizeReduction: '75%',
                 expectedSize: `~${Math.round(totalDuration / 60 * 0.7)}MB (compressed)`
@@ -114,7 +114,7 @@ class MediaBunnyProcessor {
                         end: endTime
                     },
                     audio: {
-                        sampleRate: 22050, // Lower sample rate for smaller files (half of 44.1kHz)
+                        sampleRate: 16000, // Even lower sample rate (16kHz - phone quality)
                         numberOfChannels: 1, // Force mono to reduce file size by half
                         bitDepth: 16, // Standard 16-bit depth
                         forceTranscode: true // Force re-encoding to apply compression

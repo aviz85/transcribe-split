@@ -87,9 +87,9 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   let actualJobId, actualSegmentIndex;
   
   // Find task by ElevenLabs request_id
-  const taskEntry = Object.entries(transcriptionTasks).find(([taskId, task]) => 
+  const taskEntry = transcriptionTasks ? Object.entries(transcriptionTasks).find(([taskId, task]) => 
     task.elevenlabsRequestId === requestId
-  );
+  ) : null;
   
   if (taskEntry) {
     const [taskId, task] = taskEntry;
