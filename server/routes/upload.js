@@ -47,6 +47,12 @@ router.post('/:jobId/segment/:segmentIndex', express.raw({ type: '*/*', limit: '
   const segmentIdx = parseInt(segmentIndex);
   console.log(`📤 [CLIENT->SERVER] Uploading segment ${segmentIdx} for job ${jobId}, size: ${req.body?.length || 0} bytes`);
   
+  // Handle upload errors gracefully
+  if (!req.body || req.body.length === 0) {
+    console.error(`❌ [CLIENT->SERVER] No data received for segment ${segmentIdx}`);
+    return res.status(400).json({ error: 'No audio data received' });
+  }
+  
   const job = jobs.get(jobId);
   if (!job) {
     return res.status(404).json({ error: 'Job not found' });

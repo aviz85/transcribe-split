@@ -39,6 +39,11 @@ app.get('/', (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
+  // Handle upload aborts gracefully
+  if (err.code === 'ECONNABORTED' || err.type === 'request.aborted') {
+    console.warn('⚠️ [SERVER] Upload aborted by client - this is normal for cancelled uploads');
+    return res.status(400).json({ error: 'Upload cancelled' });
+  }
   console.error('Unhandled error:', err);
   res.status(500).json({ 
     error: process.env.NODE_ENV === 'production' ? 'Internal server error' : err.message 
