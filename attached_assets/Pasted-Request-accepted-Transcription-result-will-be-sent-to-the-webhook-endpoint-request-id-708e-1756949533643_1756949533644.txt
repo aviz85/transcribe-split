@@ -1,0 +1,57 @@
+Request accepted. Transcription result will be sent to the webhook endpoint.',
+    request_id: '708e3f5b1f74463f894edf05abf257d3',
+    transcription_id: 'ok7cwzo82RQn03k6cnwf'
+  }
+}
+🎯 [ELEVENLABS->SERVER] Task ID received: 1756949465828-0 for job de52a9cb-3526-44c3-b856-6f5608f1bb10 segment 0
+✅ [ELEVENLABS->SERVER] Transcription started for job de52a9cb-3526-44c3-b856-6f5608f1bb10 segment 0, taskId: 1756949465828-0
+📨 [ELEVENLABS->SERVER] Webhook received from ElevenLabs
+📊 [ELEVENLABS->SERVER] Headers: {
+  host: 'a0e262a7-89d2-4bf8-b571-e72d6ae1bef4-00-3myrynbtp2nf6.picard.replit.dev',
+  'user-agent': 'ElevenLabs/1.0',
+  'transfer-encoding': 'chunked',
+  accept: '*/*',
+  'accept-encoding': 'gzip, deflate',
+  'content-type': 'application/json',
+  'elevenlabs-signature': 't=1756949479,v0=6a3406004994675fb5e31a23eea155685d19eaa9b44c9c44920843545fdcf9f8',
+  'x-forwarded-for': '34.59.11.47, 10.81.7.155',
+  'x-forwarded-proto': 'https',
+  'x-replit-user-bio': '',
+  'x-replit-user-id': '',
+  'x-replit-user-name': '',
+  'x-replit-user-profile-image': '',
+  'x-replit-user-roles': '',
+  'x-replit-user-teams': '',
+  'x-replit-user-url': ''
+}
+📝 [ELEVENLABS->SERVER] Webhook payload (pre-parsed): {
+  "type": "speech_to_text_transcription",
+  "event_timestamp": 1756949479,
+  "data": {
+    "request_id": "708e3f5b1f74463f894edf05abf257d3",
+    "transcription": {
+      "language_code": "heb",
+      "language_probability": 0.9998074173927307,
+      "text": "אני חושב שאחד הדברים שהכי מעסיקים אותי והכי מתסכלים אותי, זה שהמחנה עכשיו מתייחס ומתאבד על הבחירות הקרובות, שהן מאוד חשובות. מן הסתם הן גורליות, אבל הבחירות הבאות אפילו יהיה עוד יותר גורליות, ואחרי הן יהיו עוד יותר גורליות. כי הווקטור, אם אתה לא מבין שיש פה בעיה הרבה יותר עמוקה מנתניהו או מאיזה רוב רגעי, יש פה כוח אדיר שמנסה להזיז את ישראל לכיוון מסוים. ואם אנחנו לא נציע פתרון אחר שהוא לא בנט, ואני אומר בכנות, הוא גם לא. אף אחד מהשחקנים הפוליטיים כרגע, אף אחד לא באמת בא ואומר הנה רעיון גדול שיש בו רכיבים ויש בו זהות ויש בו אידיאולוגיה, ויש בו ערכים. בואו אליי, בואו אתה, הימין הרך, המסורתי. יש לך מקום אצלי, יש לך מקום אצלי. אני שם אותך במרכז, אני מתקן, אין לנו את זה. וזה מאוד מאוד מתסכל אותי, כי אני אגיד רגע, הפחד, אבל אני עובד בשביל למנוע את הדבר הזה. אבל גם אם בטעות אני שם במרכאות \"נגנוב בחירות\", בסדר, \"נגנוב\" בחירות, בנט עם זה וההוא ושם ותהיה ממשלה לא רעה. היא הולכת לתקן באמת את כל בעיות הליבה? אם היא לא תקן את כל בעיות הליבה ולא תסתום את כל החורים באונייה הזאת, אז הציבור יתבאס, כי שום דבר דרמטי לא ישתנה. סבבה, זה נחמד שקמים בבוקר ומישהו עובד בשבילך באיזושהי צורה",
+      "words": [
+        {
+          "text": "אני",
+          "start": 0.079,
+          "end": 0.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.18,
+          "end": 0.199,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "חושב",
+          "start": 

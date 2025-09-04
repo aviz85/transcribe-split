@@ -105,8 +105,8 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
       console.log('⚡ [ELEVENLABS->SERVER] Using filename fallback:', { jobId: actualJobId, segmentIndex: actualSegmentIndex });
     } else {
       console.warn('⚠️ [ELEVENLABS->SERVER] Cannot find task mapping for request_id:', requestId);
-      console.log('🔍 [ELEVENLABS->SERVER] Available tasks:', Object.keys(transcriptionTasks));
-      console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', Object.keys(payload));
+      console.log('🔍 [ELEVENLABS->SERVER] Available tasks:', transcriptionTasks ? Object.keys(transcriptionTasks) : 'none');
+      console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', payload ? Object.keys(payload) : 'none');
       // Don't fail completely - just log the transcription result
       console.log('📝 [ELEVENLABS->SERVER] Transcription received (orphaned):', {
         text: transcript?.substring(0, 200) + (transcript?.length > 200 ? '...' : ''),
