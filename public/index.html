@@ -383,19 +383,36 @@
         </div>
     </div>
 
-    <script type="module">
-        import * as MediaBunny from '/js/mediabunny.min.mjs';
-        window.MediaBunny = MediaBunny;
-        
-        // Load MP3 encoder bundle
-        const mp3EncoderScript = document.createElement('script');
-        mp3EncoderScript.src = '/js/mp3-encoder.min.mjs';
-        mp3EncoderScript.onload = () => {
-            if (window.MediaBunnyMp3Encoder) {
-                window.registerMp3Encoder = window.MediaBunnyMp3Encoder.registerMp3Encoder;
+    <!-- Load MediaBunny first, then MP3 Encoder -->
+    <script src="https://cdn.jsdelivr.net/npm/mediabunny@1.13.2/dist/mediabunny.min.js"></script>
+    <script>
+        // Wait for MediaBunny to load, then load MP3 encoder
+        window.addEventListener('load', async () => {
+            if (window.Mediabunny) {
+                console.log('✅ [SETUP] MediaBunny loaded successfully');
+                
+                // Now load MP3 encoder
+                const mp3Script = document.createElement('script');
+                mp3Script.src = 'https://cdn.jsdelivr.net/npm/@mediabunny/mp3-encoder@1.13.2/dist/bundles/mediabunny-mp3-encoder.js';
+                mp3Script.onload = async () => {
+                    if (window.MediaBunnyMp3Encoder) {
+                        console.log('🎵 [SETUP] Registering MP3 encoder...');
+                        window.MediaBunnyMp3Encoder.registerMp3Encoder();
+                        console.log('✅ [SETUP] MP3 encoder registered successfully');
+                        
+                        // Test MP3 support
+                        const mp3Supported = await window.Mediabunny.canEncodeAudio('mp3');
+                        console.log('🔍 [SETUP] MP3 encoding supported:', mp3Supported);
+                    }
+                };
+                mp3Script.onerror = () => {
+                    console.error('❌ [SETUP] Failed to load MP3 encoder');
+                };
+                document.head.appendChild(mp3Script);
+            } else {
+                console.error('❌ [SETUP] MediaBunny not loaded');
             }
-        };
-        document.head.appendChild(mp3EncoderScript);
+        });
     </script>
     <script src="/js/mediabunny-client.js"></script>
     <script src="/js/app.js"></script>
