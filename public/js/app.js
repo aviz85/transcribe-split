@@ -22,8 +22,8 @@ class TranscribeApp {
         this.progressText = document.getElementById('progressText');
         this.progressDetails = document.getElementById('progressDetails');
         this.progressBar = document.querySelector('.progress-fill');
-        this.segmentsList = document.getElementById('segmentsList');
-        this.transcriptText = document.getElementById('transcriptText');
+        this.segmentsList = document.getElementById('segmentsGrid');
+        this.transcriptText = document.getElementById('transcriptContent');
         this.downloadBtn = document.getElementById('downloadBtn');
         this.newUploadBtn = document.getElementById('newUploadBtn');
     }
@@ -225,24 +225,28 @@ class TranscribeApp {
     }
 
     addSegmentToList(segment) {
+        if (!this.segmentsList) {
+            console.error('Segments list element not found');
+            return;
+        }
+        
         const segmentElement = document.createElement('div');
-        segmentElement.className = 'segment-item';
+        segmentElement.className = 'segment-card';
         segmentElement.innerHTML = `
-            <div class="segment-header">
-                <span class="segment-title">Segment ${segment.index + 1}</span>
-                <span class="segment-duration">${this.formatDuration(segment.duration)}</span>
-                <span class="segment-status" data-segment="${segment.index}">
-                    <i class="fas fa-clock"></i> Processing...
-                </span>
+            <div class="segment-title">
+                <i class="fas fa-play"></i>
+                Segment ${segment.index + 1}
+                <span style="float: right; font-size: 0.8em;">${this.formatDuration(segment.duration)}</span>
             </div>
-            <div class="segment-details">
-                <small class="text-muted">
-                    ${this.formatTime(segment.startTime)} - ${this.formatTime(segment.endTime)} 
-                    (${this.formatFileSize(segment.size)})
-                </small>
+            <div class="segment-info">
+                ${this.formatTime(segment.startTime)} - ${this.formatTime(segment.endTime)} 
+                (${this.formatFileSize(segment.size)})
+            </div>
+            <div class="segment-status" data-segment="${segment.index}">
+                <i class="fas fa-clock"></i> Processing...
             </div>
             <div class="segment-transcript" data-segment="${segment.index}" style="display: none;">
-                <div class="transcript-content"></div>
+                <div style="margin-top: 0.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85em;"></div>
             </div>
         `;
         
@@ -405,7 +409,7 @@ class TranscribeApp {
         this.transcriptSection.style.display = 'none';
         this.clearError();
         
-        this.segmentsList.innerHTML = '';
+        if (this.segmentsList) this.segmentsList.innerHTML = '';
         this.transcriptText.textContent = '';
     }
 
