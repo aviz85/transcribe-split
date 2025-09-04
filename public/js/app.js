@@ -200,26 +200,49 @@ class TranscribeApp {
         if (!this.currentJob) return;
         
         try {
+            // Show upload progress UI
+            this.showSegmentUploadProgress(segment.index);
+            
             // Convert blob to array buffer
             const arrayBuffer = await segment.blob.arrayBuffer();
             
-            const response = await fetch(`/api/upload/${this.currentJob}/segment/${segment.index}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': segment.mimeType
-                },
-                body: arrayBuffer
+            // Create XMLHttpRequest to track upload progress
+            const uploadPromise = new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                
+                xhr.upload.addEventListener('progress', (event) => {
+                    if (event.lengthComputable) {
+                        const percentComplete = (event.loaded / event.total) * 100;
+                        this.updateSegmentUploadProgress(segment.index, percentComplete, event.loaded, event.total);
+                    }
+                });
+                
+                xhr.addEventListener('load', () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response);
+                    } else {
+                        reject(new Error(`Upload failed with status ${xhr.status}`));
+                    }
+                });
+                
+                xhr.addEventListener('error', () => {
+                    reject(new Error('Upload failed due to network error'));
+                });
+                
+                xhr.open('POST', `/api/upload/${this.currentJob}/segment/${segment.index}`);
+                xhr.setRequestHeader('Content-Type', segment.mimeType);
+                xhr.send(arrayBuffer);
             });
 
-            if (!response.ok) {
-                throw new Error(`Failed to upload segment ${segment.index}`);
-            }
-
-            // Update segment status in UI
+            await uploadPromise;
+            
+            // Hide upload progress and update segment status
+            this.hideSegmentUploadProgress(segment.index);
             this.updateSegmentStatus(segment.index, 'uploaded', 'Uploaded for transcription');
             
         } catch (error) {
             console.error(`Failed to upload segment ${segment.index}:`, error);
+            this.hideSegmentUploadProgress(segment.index);
             this.updateSegmentStatus(segment.index, 'error', error.message);
         }
     }
@@ -245,12 +268,53 @@ class TranscribeApp {
             <div class="segment-status" data-segment="${segment.index}">
                 <i class="fas fa-clock"></i> Processing...
             </div>
+            <div class="segment-upload-progress" data-segment="${segment.index}" style="display: none;">
+                <div style="font-size: 0.8em; margin-bottom: 0.3rem;">Uploading...</div>
+                <div class="upload-progress-bar" style="width: 100%; height: 4px; background: #e0e0e0; border-radius: 2px; overflow: hidden;">
+                    <div class="upload-progress-fill" style="width: 0%; height: 100%; background: #007bff; transition: width 0.3s ease;"></div>
+                </div>
+                <div class="upload-progress-text" style="font-size: 0.75em; color: #666; margin-top: 0.2rem;">0% uploaded</div>
+            </div>
             <div class="segment-transcript" data-segment="${segment.index}" style="display: none;">
                 <div style="margin-top: 0.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85em;"></div>
             </div>
         `;
         
         this.segmentsList.appendChild(segmentElement);
+    }
+
+    showSegmentUploadProgress(segmentIndex) {
+        const uploadProgress = document.querySelector(`[data-segment="${segmentIndex}"].segment-upload-progress`);
+        if (uploadProgress) {
+            uploadProgress.style.display = 'block';
+        }
+    }
+
+    updateSegmentUploadProgress(segmentIndex, percentComplete, loaded = 0, total = 0) {
+        const uploadProgress = document.querySelector(`[data-segment="${segmentIndex}"].segment-upload-progress`);
+        if (!uploadProgress) return;
+        
+        const progressFill = uploadProgress.querySelector('.upload-progress-fill');
+        const progressText = uploadProgress.querySelector('.upload-progress-text');
+        
+        if (progressFill) {
+            progressFill.style.width = `${percentComplete}%`;
+        }
+        
+        if (progressText) {
+            if (loaded && total) {
+                progressText.textContent = `${Math.round(percentComplete)}% uploaded (${this.formatFileSize(loaded)} / ${this.formatFileSize(total)})`;
+            } else {
+                progressText.textContent = `${Math.round(percentComplete)}% uploaded`;
+            }
+        }
+    }
+
+    hideSegmentUploadProgress(segmentIndex) {
+        const uploadProgress = document.querySelector(`[data-segment="${segmentIndex}"].segment-upload-progress`);
+        if (uploadProgress) {
+            uploadProgress.style.display = 'none';
+        }
     }
 
     updateSegmentStatus(segmentIndex, status, message) {
