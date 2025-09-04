@@ -283,7 +283,7 @@ class TranscribeApp {
                 <div class="upload-progress-text" style="font-size: 0.75em; color: #666; margin-top: 0.2rem;">0% uploaded</div>
             </div>
             <div class="segment-transcript" data-segment="${segment.index}" style="display: none;">
-                <div style="margin-top: 0.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85em;"></div>
+                <div class="transcript-content" style="margin-top: 0.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85em;"></div>
             </div>
         `;
         
@@ -400,10 +400,20 @@ class TranscribeApp {
     }
 
     addTranscription(segmentIndex, transcription) {
+        console.log(`🎯 [CLIENT] Adding transcription for segment ${segmentIndex}:`, transcription?.substring(0, 100) + '...');
+        
         const transcriptElement = document.querySelector(`[data-segment="${segmentIndex}"].segment-transcript`);
         if (transcriptElement) {
             transcriptElement.style.display = 'block';
-            transcriptElement.querySelector('.transcript-content').textContent = transcription;
+            const contentElement = transcriptElement.querySelector('.transcript-content');
+            if (contentElement) {
+                contentElement.textContent = transcription;
+                console.log(`✅ [CLIENT] Transcription displayed for segment ${segmentIndex}`);
+            } else {
+                console.error(`❌ [CLIENT] No .transcript-content element found for segment ${segmentIndex}`);
+            }
+        } else {
+            console.error(`❌ [CLIENT] No .segment-transcript element found for segment ${segmentIndex}`);
         }
         
         // Update combined transcript
