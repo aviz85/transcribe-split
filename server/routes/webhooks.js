@@ -82,17 +82,39 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
     console.log('🔄 [ELEVENLABS->SERVER] Using legacy webhook format');
   }
   
-  // Extract job info from request_id (which should be the filename we sent)
-  // Format: job_{jobId}_segment_{segmentIndex}
-  const filenameMatch = requestId?.match(/job_([^_]+)_segment_(\d+)/);
-  if (!filenameMatch) {
-    console.warn('⚠️ [ELEVENLABS->SERVER] Cannot parse job info from request_id:', requestId);
-    console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', Object.keys(payload));
-    return res.status(200).send('ok');
-  }
+  // Look up job info from our task mapping using request_id
+  let actualJobId, actualSegmentIndex;
   
-  const actualJobId = filenameMatch[1];
-  const actualSegmentIndex = parseInt(filenameMatch[2]);
+  // Find task by ElevenLabs request_id
+  const taskEntry = Object.entries(transcriptionTasks).find(([taskId, task]) => 
+    task.elevenlabsRequestId === requestId
+  );
+  
+  if (taskEntry) {
+    const [taskId, task] = taskEntry;
+    actualJobId = task.jobId;
+    actualSegmentIndex = task.segmentIndex;
+    console.log('✅ [ELEVENLABS->SERVER] Found task mapping:', { taskId, jobId: actualJobId, segmentIndex: actualSegmentIndex, requestId });
+  } else {
+    // Fallback: try to parse from filename if available
+    const filenameMatch = requestId?.match(/job_([^_]+)_segment_(\d+)/);
+    if (filenameMatch) {
+      actualJobId = filenameMatch[1];
+      actualSegmentIndex = parseInt(filenameMatch[2]);
+      console.log('⚡ [ELEVENLABS->SERVER] Using filename fallback:', { jobId: actualJobId, segmentIndex: actualSegmentIndex });
+    } else {
+      console.warn('⚠️ [ELEVENLABS->SERVER] Cannot find task mapping for request_id:', requestId);
+      console.log('🔍 [ELEVENLABS->SERVER] Available tasks:', Object.keys(transcriptionTasks));
+      console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', Object.keys(payload));
+      // Don't fail completely - just log the transcription result
+      console.log('📝 [ELEVENLABS->SERVER] Transcription received (orphaned):', {
+        text: transcript?.substring(0, 200) + (transcript?.length > 200 ? '...' : ''),
+        language,
+        confidence
+      });
+      return res.status(200).send('ok');
+    }
+  }
   
   if (!actualJobId || isNaN(actualSegmentIndex)) {
     console.warn('⚠️ [ELEVENLABS->SERVER] Invalid job info parsed from request_id:', requestId);

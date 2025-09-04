@@ -18,7 +18,7 @@ class MediaBunnyProcessor {
      * @param {Object} options - Processing options
      */
     async processFile(file, options = {}) {
-        const maxDuration = options.maxDuration || 5 * 60; // 5 minutes in seconds
+        const maxDuration = options.maxDuration || 15 * 60; // 15 minutes in seconds
         
         try {
             this.onProgress?.({ stage: 'initializing', progress: 0 });
@@ -49,21 +49,28 @@ class MediaBunnyProcessor {
 
             const { sampleRate, numberOfChannels } = audioTrack;
             
-            // Check if MP3 encoding is supported
+            // Check if MP3 encoding is supported with optimized settings
             const mp3Supported = await canEncodeAudio('mp3', { 
-                numberOfChannels, 
-                sampleRate: 48000, // Standard sample rate for MP3
-                bitrate: 128000 
+                numberOfChannels: Math.min(numberOfChannels, 2), // Force stereo max
+                sampleRate: 44100, // Standard sample rate for MP3 (44.1kHz)
+                bitrate: 128000 // 128kbps for good quality/size balance
             }).catch(() => false);
 
             const outputFormat = mp3Supported ? new Mp3OutputFormat() : new WavOutputFormat();
             const fileExtension = mp3Supported ? 'mp3' : 'wav';
             const mimeType = mp3Supported ? 'audio/mpeg' : 'audio/wav';
 
+            console.log('MediaBunny encoding options:', {
+                mp3Supported,
+                format: fileExtension.toUpperCase(),
+                bitrate: mp3Supported ? '128kbps' : 'N/A',
+                expectedSize: mp3Supported ? `~${Math.round(totalDuration / 60)}MB` : 'Variable'
+            });
+
             this.onProgress?.({ 
                 stage: 'processing', 
                 progress: 0.2, 
-                info: `Using ${fileExtension.toUpperCase()} format, total duration: ${Math.round(totalDuration)}s`
+                info: `Using ${fileExtension.toUpperCase()} format (${mp3Supported ? '128kbps' : 'uncompressed'}), total duration: ${Math.round(totalDuration)}s`
             });
 
             // Calculate number of segments
@@ -88,7 +95,7 @@ class MediaBunnyProcessor {
                     target: new BufferTarget(),
                 });
 
-                // Configure conversion with trim
+                // Configure conversion with trim and proper MP3 compression
                 const conversion = await Conversion.init({
                     input,
                     output,
@@ -97,9 +104,11 @@ class MediaBunnyProcessor {
                         end: endTime
                     },
                     audio: {
-                        sampleRate: mp3Supported ? 48000 : sampleRate, // Resample for MP3
-                        numberOfChannels: Math.min(numberOfChannels, 2), // Stereo max
-                        bitrate: mp3Supported ? 128000 : undefined // 128kbps for MP3
+                        codec: mp3Supported ? 'mp3' : undefined, // Explicitly specify MP3 codec
+                        sampleRate: mp3Supported ? 44100 : sampleRate, // Standard 44.1kHz for MP3
+                        numberOfChannels: Math.min(numberOfChannels, 2), // Force stereo max for compatibility
+                        bitrate: mp3Supported ? 128000 : undefined, // 128kbps = ~1MB per minute
+                        forceTranscode: true // Force re-encoding to apply bitrate
                     }
                 });
 
