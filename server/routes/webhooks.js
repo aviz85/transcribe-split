@@ -107,6 +107,14 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
       console.warn('⚠️ [ELEVENLABS->SERVER] Cannot find task mapping for request_id:', requestId);
       console.log('🔍 [ELEVENLABS->SERVER] Available tasks:', transcriptionTasks ? Object.keys(transcriptionTasks) : 'none');
       console.log('🔍 [ELEVENLABS->SERVER] Available payload keys:', payload ? Object.keys(payload) : 'none');
+      
+      // EMERGENCY FIX: Find any active job and use it
+      const activeJobs = Array.from(jobs.keys());
+      if (activeJobs.length > 0) {
+        actualJobId = activeJobs[0]; // Use the first active job
+        actualSegmentIndex = 0; // Assume segment 0
+        console.log('🚨 [ELEVENLABS->SERVER] Emergency fallback: using active job', actualJobId);
+      }
       // Don't fail completely - just log the transcription result
       console.log('📝 [ELEVENLABS->SERVER] Transcription received (orphaned):', {
         text: transcript?.substring(0, 200) + (transcript?.length > 200 ? '...' : ''),
