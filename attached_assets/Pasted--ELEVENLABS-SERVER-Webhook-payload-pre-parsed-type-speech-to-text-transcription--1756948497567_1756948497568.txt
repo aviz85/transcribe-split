@@ -1,0 +1,3846 @@
+
+📝 [ELEVENLABS->SERVER] Webhook payload (pre-parsed): {
+  "type": "speech_to_text_transcription",
+  "event_timestamp": 1756948457,
+  "data": {
+    "request_id": "56e0e8d7620b4e24ba46625fd82f675f",
+    "transcription": {
+      "language_code": "heb",
+      "language_probability": 0.999451756477356,
+      "text": "אני חושב שאחד הדברים שהכי מעסיקים אותי והכי מתסכלים אותי, זה שהמחנה עכשיו מתייחס ומתאבד על הבחירות הקרובות, שהן מאוד חשובות מן הסתם הן גורליות, אבל הבחירות הבאות אפילו יותר גורליות לאחריהן יהיו עוד יותר גורליות. כי הווקטור, אם אתה לא מבין שיש פה בעיה הרבה יותר עמוקה מנתניהו או מאיזה רוב רגעי, יש פה כוח אדיר שמנסה להזיז את ישראל לכיוון מסוים. ואם אנחנו לא נציע פתרון אחר שהוא לא בנט, ואני אומר בכנות, הוא גם לא אף אחד מהשחקנים הפוליטיים כרגע אף אחד לא באמת בא ואומר הנה רעיון גדול שיש בו רכיבים ויש בו זהות ויש בו אידיאולוגיה, ויש בו ערכים. בואו אליי, בואו אתה, הימין הרך, המסורתי. יש לך מקום אצלי, יש לך מקום אצלי. אני שם אותך במרכז, אני מתקן, אין לנו את זה, וזה מאוד מאוד מתסכל אותי. כי אני אגיד רגע, הפחד, ואני עובד בשביל למנוע את הדבר הזה, אבל גם אם בטעות אני שם במרכאות \"נגנוב בחירות\", בסדר, \"נגנוב\" בחירות, בנט עם זה וההוא ושם וזה תהיה ממשלה לא רעה. היא הולכת לתקן באמת את כל בעיות הליבה, אם היא לא תקן את כל בעיות הליבה ולא תסתום את כל החורים באונייה הזאתי. אז הציבור יתבאס, כי שום דבר דרמטי לא ישתנה. סבבה, זה נחמד שקמים בבוקר ומישהו עובד בשבילך באיזושהי צורה, אבל לא הרבה",
+      "words": [
+        {
+          "text": "אני",
+          "start": 0.059,
+          "end": 0.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.18,
+          "end": 0.199,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "חושב",
+          "start": 0.199,
+          "end": 0.339,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.339,
+          "end": 0.359,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שאחד",
+          "start": 0.359,
+          "end": 0.6,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.6,
+          "end": 0.62,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הדברים",
+          "start": 0.62,
+          "end": 0.92,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 0.92,
+          "end": 0.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שהכי",
+          "start": 0.959,
+          "end": 1.36,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 1.36,
+          "end": 1.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מעסיקים",
+          "start": 1.62,
+          "end": 2.099,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 2.099,
+          "end": 2.099,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אותי",
+          "start": 2.099,
+          "end": 2.359,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 2.359,
+          "end": 3.059,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "והכי",
+          "start": 3.059,
+          "end": 3.279,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 3.279,
+          "end": 3.279,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מתסכלים",
+          "start": 3.279,
+          "end": 3.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 3.799,
+          "end": 3.799,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אותי,",
+          "start": 3.799,
+          "end": 4.659,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 4.659,
+          "end": 4.94,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "זה",
+          "start": 4.94,
+          "end": 5.099,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 5.099,
+          "end": 5.199,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שהמחנה",
+          "start": 5.199,
+          "end": 6.579,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 6.579,
+          "end": 6.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עכשיו",
+          "start": 6.619,
+          "end": 7.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 7.34,
+          "end": 7.419,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מתייחס",
+          "start": 7.419,
+          "end": 8.119,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 8.119,
+          "end": 8.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ומתאבד",
+          "start": 8.899,
+          "end": 9.439,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 9.439,
+          "end": 9.46,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "על",
+          "start": 9.46,
+          "end": 9.539,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 9.539,
+          "end": 9.539,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הבחירות",
+          "start": 9.539,
+          "end": 9.88,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 9.88,
+          "end": 9.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הקרובות,",
+          "start": 9.899,
+          "end": 10.28,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.28,
+          "end": 10.28,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שהן",
+          "start": 10.28,
+          "end": 10.399,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.399,
+          "end": 10.42,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מאוד",
+          "start": 10.42,
+          "end": 10.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.559,
+          "end": 10.579,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "חשובות",
+          "start": 10.579,
+          "end": 10.899,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 10.899,
+          "end": 10.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מן",
+          "start": 10.92,
+          "end": 11,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 11,
+          "end": 11.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הסתם",
+          "start": 11.019,
+          "end": 11.3,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 11.3,
+          "end": 11.319,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הן",
+          "start": 11.319,
+          "end": 11.42,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 11.42,
+          "end": 11.46,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גורליות,",
+          "start": 11.46,
+          "end": 11.94,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 11.94,
+          "end": 11.96,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אבל",
+          "start": 11.96,
+          "end": 12.439,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 12.439,
+          "end": 12.479,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הבחירות",
+          "start": 12.479,
+          "end": 12.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 12.779,
+          "end": 12.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הבאות",
+          "start": 12.819,
+          "end": 13.059,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.059,
+          "end": 13.079,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אפילו",
+          "start": 13.079,
+          "end": 13.359,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.359,
+          "end": 13.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יותר",
+          "start": 13.36,
+          "end": 13.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 13.799,
+          "end": 13.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גורליות",
+          "start": 13.819,
+          "end": 14.239,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.239,
+          "end": 14.279,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לאחריהן",
+          "start": 14.279,
+          "end": 14.519,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.519,
+          "end": 14.539,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יהיו",
+          "start": 14.539,
+          "end": 14.639,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.639,
+          "end": 14.719,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עוד",
+          "start": 14.719,
+          "end": 14.839,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 14.839,
+          "end": 14.84,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יותר",
+          "start": 14.84,
+          "end": 15,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 15,
+          "end": 15.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גורליות.",
+          "start": 15.019,
+          "end": 15.4,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 15.4,
+          "end": 15.42,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כי",
+          "start": 15.42,
+          "end": 15.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 15.559,
+          "end": 16.04,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הווקטור,",
+          "start": 16.04,
+          "end": 16.64,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 16.64,
+          "end": 16.679,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אם",
+          "start": 16.68,
+          "end": 16.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 16.739,
+          "end": 16.739,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אתה",
+          "start": 16.739,
+          "end": 16.84,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 16.84,
+          "end": 16.86,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 16.86,
+          "end": 16.92,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 16.92,
+          "end": 16.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מבין",
+          "start": 16.959,
+          "end": 17.839,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 17.84,
+          "end": 17.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שיש",
+          "start": 17.899,
+          "end": 18.099,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.099,
+          "end": 18.12,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "פה",
+          "start": 18.12,
+          "end": 18.199,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.199,
+          "end": 18.219,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בעיה",
+          "start": 18.219,
+          "end": 18.44,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.44,
+          "end": 18.54,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הרבה",
+          "start": 18.54,
+          "end": 18.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 18.799,
+          "end": 18.799,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יותר",
+          "start": 18.799,
+          "end": 19.019,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 19.019,
+          "end": 19.02,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עמוקה",
+          "start": 19.02,
+          "end": 19.399,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 19.399,
+          "end": 19.459,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מנתניהו",
+          "start": 19.459,
+          "end": 20.88,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 20.88,
+          "end": 20.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "או",
+          "start": 20.899,
+          "end": 21.059,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 21.059,
+          "end": 21.099,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מאיזה",
+          "start": 21.1,
+          "end": 21.5,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 21.5,
+          "end": 21.559,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רוב",
+          "start": 21.559,
+          "end": 21.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 21.799,
+          "end": 21.839,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רגעי,",
+          "start": 21.84,
+          "end": 22.379,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 22.379,
+          "end": 22.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יש",
+          "start": 22.819,
+          "end": 23.079,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 23.079,
+          "end": 23.159,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "פה",
+          "start": 23.159,
+          "end": 23.399,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 23.399,
+          "end": 24.1,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כוח",
+          "start": 24.1,
+          "end": 24.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 24.559,
+          "end": 24.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אדיר",
+          "start": 24.619,
+          "end": 25.199,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 25.199,
+          "end": 25.339,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שמנסה",
+          "start": 25.34,
+          "end": 26.02,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 26.02,
+          "end": 26.059,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "להזיז",
+          "start": 26.059,
+          "end": 26.299,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 26.299,
+          "end": 26.299,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 26.299,
+          "end": 26.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 26.34,
+          "end": 26.34,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ישראל",
+          "start": 26.34,
+          "end": 26.6,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 26.6,
+          "end": 26.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לכיוון",
+          "start": 26.619,
+          "end": 26.88,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 26.88,
+          "end": 26.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מסוים.",
+          "start": 26.899,
+          "end": 27.2,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 27.2,
+          "end": 27.22,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ואם",
+          "start": 27.22,
+          "end": 27.36,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 27.36,
+          "end": 27.399,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אנחנו",
+          "start": 27.399,
+          "end": 27.859,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 27.859,
+          "end": 27.88,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 27.88,
+          "end": 27.96,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 27.96,
+          "end": 28.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "נציע",
+          "start": 28.019,
+          "end": 28.839,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 28.84,
+          "end": 28.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "פתרון",
+          "start": 28.899,
+          "end": 29.3,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 29.3,
+          "end": 29.319,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אחר",
+          "start": 29.319,
+          "end": 29.54,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 29.54,
+          "end": 29.559,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שהוא",
+          "start": 29.559,
+          "end": 29.699,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 29.699,
+          "end": 29.699,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 29.699,
+          "end": 29.78,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 29.78,
+          "end": 29.879,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בנט,",
+          "start": 29.879,
+          "end": 30.26,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 30.26,
+          "end": 30.799,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ואני",
+          "start": 30.799,
+          "end": 31.02,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.02,
+          "end": 31.039,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אומר",
+          "start": 31.039,
+          "end": 31.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.18,
+          "end": 31.219,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בכנות,",
+          "start": 31.219,
+          "end": 31.479,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.479,
+          "end": 31.479,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הוא",
+          "start": 31.479,
+          "end": 31.52,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.52,
+          "end": 31.559,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גם",
+          "start": 31.559,
+          "end": 31.68,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.68,
+          "end": 31.739,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 31.739,
+          "end": 31.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 31.959,
+          "end": 32,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אף",
+          "start": 32,
+          "end": 32.139,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 32.139,
+          "end": 32.139,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אחד",
+          "start": 32.139,
+          "end": 32.238,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 32.238,
+          "end": 32.279,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מהשחקנים",
+          "start": 32.279,
+          "end": 32.68,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 32.68,
+          "end": 32.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הפוליטיים",
+          "start": 32.779,
+          "end": 33.08,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.08,
+          "end": 33.119,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כרגע",
+          "start": 33.119,
+          "end": 33.4,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.4,
+          "end": 33.459,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אף",
+          "start": 33.459,
+          "end": 33.54,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.54,
+          "end": 33.54,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אחד",
+          "start": 33.54,
+          "end": 33.599,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.599,
+          "end": 33.659,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 33.659,
+          "end": 33.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.7,
+          "end": 33.72,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "באמת",
+          "start": 33.72,
+          "end": 33.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 33.959,
+          "end": 33.979,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בא",
+          "start": 33.979,
+          "end": 34.06,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 34.06,
+          "end": 34.159,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ואומר",
+          "start": 34.159,
+          "end": 34.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 34.7,
+          "end": 34.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הנה",
+          "start": 34.819,
+          "end": 35.58,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 35.58,
+          "end": 36.139,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רעיון",
+          "start": 36.139,
+          "end": 36.579,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 36.579,
+          "end": 36.979,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גדול",
+          "start": 36.979,
+          "end": 37.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 37.739,
+          "end": 37.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שיש",
+          "start": 37.819,
+          "end": 38.06,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 38.06,
+          "end": 38.1,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בו",
+          "start": 38.1,
+          "end": 38.2,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 38.2,
+          "end": 38.26,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רכיבים",
+          "start": 38.26,
+          "end": 38.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 38.959,
+          "end": 39.059,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ויש",
+          "start": 39.059,
+          "end": 39.22,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 39.22,
+          "end": 39.24,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בו",
+          "start": 39.24,
+          "end": 39.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 39.34,
+          "end": 39.4,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "זהות",
+          "start": 39.4,
+          "end": 39.759,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 39.759,
+          "end": 39.799,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ויש",
+          "start": 39.799,
+          "end": 39.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 39.959,
+          "end": 39.979,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בו",
+          "start": 39.979,
+          "end": 40.04,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 40.04,
+          "end": 40.06,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אידיאולוגיה,",
+          "start": 40.06,
+          "end": 40.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 40.779,
+          "end": 41,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ויש",
+          "start": 41,
+          "end": 41.159,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 41.159,
+          "end": 41.2,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בו",
+          "start": 41.2,
+          "end": 41.259,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 41.259,
+          "end": 41.299,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ערכים.",
+          "start": 41.299,
+          "end": 41.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 41.799,
+          "end": 42.079,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בואו",
+          "start": 42.079,
+          "end": 42.22,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 42.22,
+          "end": 42.259,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אליי,",
+          "start": 42.259,
+          "end": 42.659,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 42.659,
+          "end": 42.72,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בואו",
+          "start": 42.72,
+          "end": 42.819,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 42.819,
+          "end": 42.86,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אתה,",
+          "start": 42.86,
+          "end": 43.159,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 43.159,
+          "end": 43.68,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הימין",
+          "start": 43.68,
+          "end": 43.939,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 43.939,
+          "end": 43.939,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הרך,",
+          "start": 43.939,
+          "end": 44.659,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 44.659,
+          "end": 44.68,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "המסורתי.",
+          "start": 44.68,
+          "end": 45.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 45.559,
+          "end": 45.599,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יש",
+          "start": 45.599,
+          "end": 45.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 45.7,
+          "end": 45.72,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לך",
+          "start": 45.72,
+          "end": 45.759,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 45.759,
+          "end": 45.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מקום",
+          "start": 45.819,
+          "end": 46,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 46,
+          "end": 46.04,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אצלי,",
+          "start": 46.04,
+          "end": 46.479,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 46.479,
+          "end": 46.54,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יש",
+          "start": 46.54,
+          "end": 46.619,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 46.619,
+          "end": 46.639,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לך",
+          "start": 46.639,
+          "end": 46.68,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 46.68,
+          "end": 46.74,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מקום",
+          "start": 46.74,
+          "end": 46.919,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 46.919,
+          "end": 46.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אצלי.",
+          "start": 46.959,
+          "end": 47.2,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 47.2,
+          "end": 47.7,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אני",
+          "start": 47.7,
+          "end": 47.86,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 47.86,
+          "end": 47.92,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שם",
+          "start": 47.92,
+          "end": 48.06,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 48.06,
+          "end": 48.059,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אותך",
+          "start": 48.059,
+          "end": 48.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 48.319,
+          "end": 48.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "במרכז,",
+          "start": 48.36,
+          "end": 49.36,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 49.36,
+          "end": 49.42,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אני",
+          "start": 49.42,
+          "end": 49.54,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 49.54,
+          "end": 49.579,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מתקן,",
+          "start": 49.579,
+          "end": 50.599,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 50.599,
+          "end": 51.099,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אין",
+          "start": 51.099,
+          "end": 51.159,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 51.159,
+          "end": 51.18,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לנו",
+          "start": 51.18,
+          "end": 51.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 51.34,
+          "end": 51.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 51.36,
+          "end": 51.439,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 51.439,
+          "end": 51.439,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "זה,",
+          "start": 51.439,
+          "end": 51.72,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 51.72,
+          "end": 51.759,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "וזה",
+          "start": 51.759,
+          "end": 51.919,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 51.919,
+          "end": 52,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מאוד",
+          "start": 52,
+          "end": 52.36,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 52.36,
+          "end": 52.4,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מאוד",
+          "start": 52.4,
+          "end": 52.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 52.559,
+          "end": 52.599,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "מתסכל",
+          "start": 52.599,
+          "end": 52.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 52.979,
+          "end": 53,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אותי.",
+          "start": 53,
+          "end": 53.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 53.559,
+          "end": 53.619,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כי",
+          "start": 53.619,
+          "end": 53.839,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 53.84,
+          "end": 53.9,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אני",
+          "start": 53.9,
+          "end": 54,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 54,
+          "end": 54.02,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אגיד",
+          "start": 54.02,
+          "end": 54.159,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 54.159,
+          "end": 54.22,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רגע,",
+          "start": 54.22,
+          "end": 54.86,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 54.86,
+          "end": 54.88,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הפחד,",
+          "start": 54.88,
+          "end": 55.34,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 55.34,
+          "end": 55.459,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ואני",
+          "start": 55.459,
+          "end": 55.599,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 55.599,
+          "end": 55.639,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עובד",
+          "start": 55.639,
+          "end": 55.88,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 55.88,
+          "end": 55.919,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בשביל",
+          "start": 55.919,
+          "end": 56.119,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 56.119,
+          "end": 56.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "למנוע",
+          "start": 56.779,
+          "end": 57.08,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 57.08,
+          "end": 57.099,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 57.099,
+          "end": 57.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 57.18,
+          "end": 57.24,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הדבר",
+          "start": 57.24,
+          "end": 57.459,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 57.459,
+          "end": 57.52,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הזה,",
+          "start": 57.52,
+          "end": 58.06,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 58.06,
+          "end": 58.119,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אבל",
+          "start": 58.119,
+          "end": 58.279,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 58.279,
+          "end": 58.34,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "גם",
+          "start": 58.34,
+          "end": 58.5,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 58.5,
+          "end": 58.52,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אם",
+          "start": 58.52,
+          "end": 58.599,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 58.599,
+          "end": 58.639,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בטעות",
+          "start": 58.639,
+          "end": 59.299,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 59.299,
+          "end": 59.38,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אני",
+          "start": 59.38,
+          "end": 59.52,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 59.52,
+          "end": 59.56,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שם",
+          "start": 59.56,
+          "end": 59.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 59.7,
+          "end": 59.719,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "במרכאות",
+          "start": 59.719,
+          "end": 60.299,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 60.299,
+          "end": 60.319,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "\"נגנוב",
+          "start": 60.319,
+          "end": 60.72,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 60.72,
+          "end": 60.759,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בחירות\",",
+          "start": 60.759,
+          "end": 61.219,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 61.219,
+          "end": 61.219,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בסדר,",
+          "start": 61.219,
+          "end": 61.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 61.7,
+          "end": 61.719,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "\"נגנוב\"",
+          "start": 61.719,
+          "end": 62.06,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 62.06,
+          "end": 62.079,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בחירות,",
+          "start": 62.079,
+          "end": 62.7,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 62.7,
+          "end": 62.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בנט",
+          "start": 62.899,
+          "end": 63.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 63.319,
+          "end": 63.38,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עם",
+          "start": 63.38,
+          "end": 63.439,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 63.439,
+          "end": 63.479,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "זה",
+          "start": 63.479,
+          "end": 63.579,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 63.579,
+          "end": 63.759,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "וההוא",
+          "start": 63.759,
+          "end": 64.019,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 64.019,
+          "end": 64.078,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ושם",
+          "start": 64.08,
+          "end": 64.358,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 64.36,
+          "end": 64.4,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "וזה",
+          "start": 64.4,
+          "end": 64.539,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 64.54,
+          "end": 64.62,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "תהיה",
+          "start": 64.62,
+          "end": 64.718,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 64.72,
+          "end": 64.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ממשלה",
+          "start": 64.779,
+          "end": 65.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 65.559,
+          "end": 65.739,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 65.739,
+          "end": 66.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 66.319,
+          "end": 66.419,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "רעה.",
+          "start": 66.419,
+          "end": 67.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 67.739,
+          "end": 67.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "היא",
+          "start": 67.779,
+          "end": 67.839,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 67.839,
+          "end": 67.839,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הולכת",
+          "start": 67.839,
+          "end": 68.099,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 68.099,
+          "end": 68.119,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לתקן",
+          "start": 68.119,
+          "end": 68.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 68.319,
+          "end": 68.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "באמת",
+          "start": 68.36,
+          "end": 68.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 68.559,
+          "end": 68.58,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 68.58,
+          "end": 68.639,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 68.639,
+          "end": 68.68,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כל",
+          "start": 68.68,
+          "end": 68.779,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 68.779,
+          "end": 68.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בעיות",
+          "start": 68.819,
+          "end": 68.999,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69,
+          "end": 69.059,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הליבה,",
+          "start": 69.059,
+          "end": 69.479,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69.479,
+          "end": 69.539,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אם",
+          "start": 69.54,
+          "end": 69.599,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69.599,
+          "end": 69.599,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "היא",
+          "start": 69.599,
+          "end": 69.639,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69.639,
+          "end": 69.659,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 69.659,
+          "end": 69.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69.739,
+          "end": 69.799,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "תקן",
+          "start": 69.799,
+          "end": 69.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 69.979,
+          "end": 70.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 70.019,
+          "end": 70.139,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 70.139,
+          "end": 70.159,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כל",
+          "start": 70.159,
+          "end": 70.259,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 70.26,
+          "end": 70.3,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בעיות",
+          "start": 70.3,
+          "end": 70.479,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 70.479,
+          "end": 70.539,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הליבה",
+          "start": 70.54,
+          "end": 70.76,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 70.76,
+          "end": 70.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ולא",
+          "start": 70.819,
+          "end": 70.94,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 70.94,
+          "end": 70.999,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "תסתום",
+          "start": 71,
+          "end": 71.339,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 71.339,
+          "end": 71.36,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "את",
+          "start": 71.36,
+          "end": 71.419,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 71.419,
+          "end": 71.459,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כל",
+          "start": 71.459,
+          "end": 71.559,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 71.559,
+          "end": 71.62,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "החורים",
+          "start": 71.62,
+          "end": 72.4,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 72.4,
+          "end": 72.5,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "באונייה",
+          "start": 72.5,
+          "end": 72.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 72.959,
+          "end": 72.959,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הזאתי.",
+          "start": 72.959,
+          "end": 73.76,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 73.76,
+          "end": 73.84,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אז",
+          "start": 73.84,
+          "end": 74.019,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 74.019,
+          "end": 74.339,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הציבור",
+          "start": 74.339,
+          "end": 74.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 74.799,
+          "end": 74.819,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "יתבאס,",
+          "start": 74.819,
+          "end": 75.679,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 75.68,
+          "end": 75.739,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "כי",
+          "start": 75.739,
+          "end": 75.799,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 75.799,
+          "end": 75.839,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שום",
+          "start": 75.839,
+          "end": 75.939,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 75.939,
+          "end": 75.979,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "דבר",
+          "start": 75.979,
+          "end": 76.18,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 76.18,
+          "end": 76.519,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "דרמטי",
+          "start": 76.519,
+          "end": 76.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 76.979,
+          "end": 77.019,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 77.019,
+          "end": 77.099,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 77.099,
+          "end": 77.16,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ישתנה.",
+          "start": 77.16,
+          "end": 77.619,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 77.619,
+          "end": 77.659,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "סבבה,",
+          "start": 77.659,
+          "end": 77.899,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 77.899,
+          "end": 77.899,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "זה",
+          "start": 77.9,
+          "end": 77.959,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 77.959,
+          "end": 77.999,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "נחמד",
+          "start": 78,
+          "end": 78.219,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 78.22,
+          "end": 78.26,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "שקמים",
+          "start": 78.26,
+          "end": 78.54,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 78.54,
+          "end": 78.559,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בבוקר",
+          "start": 78.559,
+          "end": 78.879,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 78.879,
+          "end": 79,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "ומישהו",
+          "start": 79,
+          "end": 79.5,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 79.5,
+          "end": 79.519,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "עובד",
+          "start": 79.519,
+          "end": 79.739,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 79.739,
+          "end": 79.779,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "בשבילך",
+          "start": 79.779,
+          "end": 80.059,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 80.059,
+          "end": 80.079,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "באיזושהי",
+          "start": 80.08,
+          "end": 80.319,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 80.319,
+          "end": 80.379,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "צורה,",
+          "start": 80.379,
+          "end": 80.979,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 80.979,
+          "end": 81,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "אבל",
+          "start": 81,
+          "end": 81.139,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 81.139,
+          "end": 81.179,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "לא",
+          "start": 81.179,
+          "end": 81.22,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": " ",
+          "start": 81.22,
+          "end": 81.219,
+          "type": "spacing",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        },
+        {
+          "text": "הרבה",
+          "start": 81.22,
+          "end": 102.66,
+          "type": "word",
+          "speaker_id": "speaker_0",
+          "logprob": 0,
+          "characters": null
+        }
+      ],
+      "channel_index": null,
+      "additional_formats": null,
+      "transcription_id": "VJ3ptjjsMXDysS7RrA1v"
+    },
+    "webhook_metadata": null
+  }
+}
+🔐 [ELEVENLABS->SERVER] Signature verification: { signature: 'present' }
+❌ [ELEVENLABS->SERVER] Invalid webhook signature
