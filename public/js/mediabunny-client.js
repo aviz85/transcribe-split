@@ -23,13 +23,25 @@ class MediaBunnyProcessor {
         try {
             this.onProgress?.({ stage: 'initializing', progress: 0 });
 
-            // Wait for MediaBunny to be available  
-            while (!window.Mediabunny) {
+            // Wait for MediaBunny to be available with timeout
+            let attempts = 0;
+            const maxAttempts = 50; // 5 seconds timeout
+            
+            while (!window.MediaBunny && attempts < maxAttempts) {
                 await new Promise(resolve => setTimeout(resolve, 100));
+                attempts++;
             }
             
+            if (!window.MediaBunny) {
+                throw new Error('MediaBunny failed to load after 5 seconds');
+            }
+            
+            console.log('🔍 [MEDIABUNNY] MediaBunny available, extracting modules...');
+            
             // Use MediaBunny modules from global object
-            const { Input, Output, Conversion, WavOutputFormat, Mp3OutputFormat, BlobSource, BufferTarget, ALL_FORMATS, canEncodeAudio } = window.Mediabunny;
+            const { Input, Output, Conversion, WavOutputFormat, Mp3OutputFormat, BlobSource, BufferTarget, ALL_FORMATS, canEncodeAudio } = window.MediaBunny;
+            
+            console.log('✅ [MEDIABUNNY] All modules extracted successfully');
 
             // Create input from file
             const input = new Input({
@@ -59,8 +71,10 @@ class MediaBunnyProcessor {
             console.log('MediaBunny encoding options:', {
                 mp3Supported,
                 format: fileExtension.toUpperCase(),
-                bitrate: mp3Supported ? '128kbps' : 'N/A',
-                expectedSize: mp3Supported ? `~${Math.round(totalDuration / 60)}MB` : 'Variable'
+                sampleRate: '22kHz',
+                channels: 'Mono',
+                expectedSizeReduction: '75%',
+                expectedSize: `~${Math.round(totalDuration / 60 * 0.7)}MB (compressed)`
             });
 
             this.onProgress?.({ 
