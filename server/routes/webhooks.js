@@ -9,20 +9,28 @@ const router = express.Router();
 
 // Webhook endpoint to receive Scribe results
 router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
+  console.log('📨 [ELEVENLABS->SERVER] Webhook received from ElevenLabs');
+  console.log('📊 [ELEVENLABS->SERVER] Headers:', req.headers);
+  
   const raw = req.body;
   let payload;
   
   try {
     payload = JSON.parse(raw.toString('utf8'));
-  } catch {
+    console.log('📝 [ELEVENLABS->SERVER] Webhook payload:', payload);
+  } catch (err) {
+    console.error('❌ [ELEVENLABS->SERVER] Invalid JSON in webhook:', err.message);
     return res.status(400).send('Invalid JSON');
   }
 
   const signature = req.headers['x-elevenlabs-signature'] || req.headers['elevenlabs-signature'];
+  console.log('🔐 [ELEVENLABS->SERVER] Signature verification:', { signature: signature ? 'present' : 'missing' });
+  
   if (!verifyWebhookSignature(raw, signature, config.WEBHOOK_SECRET)) {
-    console.warn('Invalid webhook signature');
+    console.warn('❌ [ELEVENLABS->SERVER] Invalid webhook signature');
     return res.status(400).send('Invalid signature');
   }
+  console.log('✅ [ELEVENLABS->SERVER] Signature verified successfully');
 
   const { jobId, segmentIndex, status, text, taskId, metadata } = payload;
   
@@ -31,15 +39,19 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   const actualSegmentIndex = segmentIndex !== undefined ? segmentIndex : metadata?.segmentIndex;
   
   if (!actualJobId) {
-    console.warn('No jobId in webhook payload');
+    console.warn('⚠️ [ELEVENLABS->SERVER] No jobId in webhook payload');
     return res.status(200).send('ok');
   }
   
+  console.log(`🎯 [ELEVENLABS->SERVER] Processing webhook for job ${actualJobId} segment ${actualSegmentIndex}`);
+  
   const job = jobs.get(actualJobId);
   if (!job) {
-    console.warn(`Job ${actualJobId} not found`);
+    console.warn(`❌ [ELEVENLABS->SERVER] Job ${actualJobId} not found`);
     return res.status(200).send('ok');
   }
+  
+  console.log(`📋 [ELEVENLABS->SERVER] Found job ${actualJobId}, current status: ${job.status}`);
 
   let entry = job.transcriptions.find(t => t.segmentIndex === actualSegmentIndex) || null;
   if (!entry) {
@@ -78,7 +90,14 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
     total: totalSegments,
     allCompleted 
   });
+  
+  console.log(`📤 [SERVER->CLIENT] SSE update sent for job ${actualJobId}: progress ${Math.round(overallProgress)}%, completed ${completedCount}/${totalSegments}`);
+  
+  if (allCompleted) {
+    console.log(`🎉 [SERVER->CLIENT] Job ${actualJobId} completed! Combined transcript length: ${job.combinedText?.length || 0} characters`);
+  }
 
+  console.log('✅ [SERVER->ELEVENLABS] Webhook processed successfully');
   res.status(200).send('ok');
 });
 
