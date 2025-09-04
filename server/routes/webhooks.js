@@ -152,29 +152,29 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
     confidence
   });
 
-  // Send transcription directly to SSE clients
-  const sseClients = job.sseClients || [];
-  sseClients.forEach(client => {
-    if (client.res && !client.res.destroyed) {
-      try {
-        client.res.write(`data: ${JSON.stringify({
-          type: 'transcription_update',
-          jobId: actualJobId,
-          segmentIndex: actualSegmentIndex,
-          status: 'completed',
-          text: transcript || '',
-          language: language,
-          confidence: confidence,
-          progress: 100
-        })}\n\n`);
-        console.log(`📡 [ELEVENLABS->SERVER] SSE sent transcription: "${transcript?.substring(0, 50)}..."`);
-      } catch (sseError) {
-        console.error('❌ [ELEVENLABS->SERVER] SSE write error:', sseError);
-      }
-    }
+  // Send transcription directly to SSE clients using sseSend utility
+  const sseSendData = {
+    type: 'transcription_complete',
+    jobId: actualJobId,
+    segmentIndex: actualSegmentIndex,
+    status: 'completed',
+    text: transcript || '',
+    language: language,
+    confidence: confidence,
+    progress: 100
+  };
+
+  console.log(`📡 [ELEVENLABS->SERVER] Sending transcription via SSE:`, {
+    jobId: actualJobId,
+    textPreview: transcript?.substring(0, 50) + '...',
+    language,
+    confidence
   });
+
+  // Use the existing SSE infrastructure
+  sseSend(actualJobId, 'transcription_complete', sseSendData);
   
-  console.log(`✅ [ELEVENLABS->SERVER] Transcription sent to ${sseClients.length} SSE clients`);
+  console.log(`✅ [ELEVENLABS->SERVER] Transcription sent to SSE system for job ${actualJobId}`);
   
   // Store the transcription text on the job object
   if (!job.combinedText) {
