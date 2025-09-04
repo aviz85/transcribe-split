@@ -172,9 +172,34 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   });
 
   // Use the existing SSE infrastructure
-  sseSend(actualJobId, 'transcription_complete', sseSendData);
-  
-  console.log(`✅ [ELEVENLABS->SERVER] Transcription sent to SSE system for job ${actualJobId}`);
+  try {
+    sseSend(actualJobId, 'transcription_complete', sseSendData);
+    console.log(`✅ [ELEVENLABS->SERVER] Transcription sent to SSE system for job ${actualJobId}`);
+    
+    // Also try sending via direct job SSE clients as backup
+    const sseClients = job.sseClients || [];
+    console.log(`🔍 [ELEVENLABS->SERVER] Job has ${sseClients.length} direct SSE clients`);
+    
+    if (sseClients.length > 0) {
+      sseClients.forEach((client, index) => {
+        if (client.res && !client.res.destroyed) {
+          try {
+            const message = `data: ${JSON.stringify(sseSendData)}\n\n`;
+            client.res.write(message);
+            console.log(`📡 [ELEVENLABS->SERVER] Direct SSE sent to client ${index}`);
+          } catch (directSseError) {
+            console.error(`❌ [ELEVENLABS->SERVER] Direct SSE error for client ${index}:`, directSseError);
+          }
+        } else {
+          console.log(`⚠️ [ELEVENLABS->SERVER] SSE client ${index} is destroyed or invalid`);
+        }
+      });
+    } else {
+      console.log(`⚠️ [ELEVENLABS->SERVER] No direct SSE clients found for job ${actualJobId}`);
+    }
+  } catch (sseError) {
+    console.error('❌ [ELEVENLABS->SERVER] SSE send error:', sseError);
+  }
   
   // Store the transcription text on the job object
   if (!job.combinedText) {

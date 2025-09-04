@@ -28,15 +28,27 @@ const reqOnClose = (res, cb) => {
 
 const sseSend = (jobId, event, data) => {
   const set = sseClients.get(jobId);
-  if (!set) return;
+  console.log(`🔍 [SSE] Sending event '${event}' to job ${jobId}, found ${set ? set.size : 0} clients`);
+  
+  if (!set) {
+    console.log(`⚠️ [SSE] No SSE clients found for job ${jobId}`);
+    return;
+  }
+  
   const line = `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
+  let sentCount = 0;
+  
   for (const res of set) {
     try {
       res.write(line);
+      sentCount++;
+      console.log(`📡 [SSE] Successfully sent to client ${sentCount}`);
     } catch (err) {
-      console.error('SSE send error:', err);
+      console.error('❌ [SSE] Send error:', err);
     }
   }
+  
+  console.log(`✅ [SSE] Sent event '${event}' to ${sentCount} clients for job ${jobId}`);
 };
 
 module.exports = {
