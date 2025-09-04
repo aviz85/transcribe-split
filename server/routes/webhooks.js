@@ -141,24 +141,10 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
   
   console.log(`📋 [ELEVENLABS->SERVER] Found job ${actualJobId}, current status: ${job.status}`);
 
-  // Initialize transcriptions array if it doesn't exist
-  if (!job.transcriptions) {
-    job.transcriptions = [];
-  }
+  // SIMPLIFIED: Just update job status and send text directly to client
+  job.status = 'completed';
   
-  let entry = job.transcriptions.find(t => t.segmentIndex === actualSegmentIndex) || null;
-  if (!entry) {
-    entry = { segmentIndex: actualSegmentIndex, taskId: requestId, status: 'processing', text: '' };
-    job.transcriptions.push(entry);
-  }
-  
-  // ElevenLabs webhook means transcription is completed - just use the text directly!
-  entry.status = 'completed';
-  entry.text = transcript || '';
-  entry.language = language;
-  entry.confidence = confidence;
-  
-  console.log('🎉 [ELEVENLABS->SERVER] Transcription saved:', {
+  console.log('🎉 [ELEVENLABS->SERVER] Transcription received:', {
     jobId: actualJobId,
     segmentIndex: actualSegmentIndex,
     textPreview: transcript?.substring(0, 100) + '...',
@@ -166,45 +152,36 @@ router.post('/elevenlabs', express.raw({ type: '*/*' }), (req, res) => {
     confidence
   });
 
-  console.log(`✅ [ELEVENLABS->SERVER] Transcription completed for job ${actualJobId} segment ${actualSegmentIndex}:`, {
-    text: transcript?.substring(0, 100) + (transcript?.length > 100 ? '...' : ''),
-    language: language,
-    confidence: confidence
+  // Send transcription directly to SSE clients
+  const sseClients = job.sseClients || [];
+  sseClients.forEach(client => {
+    if (client.res && !client.res.destroyed) {
+      try {
+        client.res.write(`data: ${JSON.stringify({
+          type: 'transcription_update',
+          jobId: actualJobId,
+          segmentIndex: actualSegmentIndex,
+          status: 'completed',
+          text: transcript || '',
+          language: language,
+          confidence: confidence,
+          progress: 100
+        })}\n\n`);
+        console.log(`📡 [ELEVENLABS->SERVER] SSE sent transcription: "${transcript?.substring(0, 50)}..."`);
+      } catch (sseError) {
+        console.error('❌ [ELEVENLABS->SERVER] SSE write error:', sseError);
+      }
+    }
   });
   
-  // Calculate progress
-  const completedCount = job.transcriptions.filter(t => t.status === 'completed').length;
-  const totalSegments = job.segments.length;
-  const transcriptionProgress = totalSegments > 0 ? (completedCount / totalSegments) * 50 : 0; // Second 50%
-  const overallProgress = 50 + transcriptionProgress; // First 50% was splitting
-
-  // Check if all segments are completed
-  const allCompleted = totalSegments > 0 && completedCount === totalSegments;
+  console.log(`✅ [ELEVENLABS->SERVER] Transcription sent to ${sseClients.length} SSE clients`);
   
-  if (allCompleted && job.status !== 'completed') {
-    job.status = 'completed';
-    job.combinedText = job.transcriptions
-      .sort((a, b) => a.segmentIndex - b.segmentIndex)
-      .map(t => t.text || '')
-      .filter(text => text.trim().length > 0)
-      .join('\n\n');
-    job.completedAt = Date.now();
+  // Store the transcription text on the job object
+  if (!job.combinedText) {
+    job.combinedText = '';
   }
-
-  sseSend(job.id, 'transcription_update', { 
-    entry, 
-    status: job.status, 
-    progress: overallProgress,
-    completed: completedCount,
-    total: totalSegments,
-    allCompleted 
-  });
-  
-  console.log(`📤 [SERVER->CLIENT] SSE update sent for job ${actualJobId}: progress ${Math.round(overallProgress)}%, completed ${completedCount}/${totalSegments}`);
-  
-  if (allCompleted) {
-    console.log(`🎉 [SERVER->CLIENT] Job ${actualJobId} completed! Combined transcript length: ${job.combinedText?.length || 0} characters`);
-  }
+  job.combinedText += transcript + '\n\n';
+  job.completedAt = Date.now();
 
   console.log('✅ [SERVER->ELEVENLABS] Webhook processed successfully');
   res.status(200).send('ok');

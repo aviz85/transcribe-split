@@ -1,0 +1,38 @@
+logprob": 0,
+          "characters": null
+        }
+      ],
+      "channel_index": null,
+      "additional_formats": null,
+      "transcription_id": "WQHN4wmHb6VW7PKuKv1A"
+    },
+    "webhook_metadata": null
+  }
+}
+🔐 [ELEVENLABS->SERVER] Signature verification: SKIPPED (disabled for development)
+✅ [ELEVENLABS->SERVER] Signature verification bypassed
+🔄 [ELEVENLABS->SERVER] Using actual ElevenLabs webhook format
+📝 [ELEVENLABS->SERVER] Transcription details: {
+  language: 'pol',
+  confidence: 0.9864572882652283,
+  textLength: 296,
+  wordsCount: 95,
+  requestId: 'f132aef1c4e140218d3da374755eae99'
+}
+⚠️ [ELEVENLABS->SERVER] Cannot find task mapping for request_id: f132aef1c4e140218d3da374755eae99
+🔍 [ELEVENLABS->SERVER] Available tasks: none
+🔍 [ELEVENLABS->SERVER] Available payload keys: [ 'type', 'event_timestamp', 'data' ]
+🚨 [ELEVENLABS->SERVER] Emergency fallback: using active job 65ea2d13-49c5-469a-af0d-5fec87f9e8c4
+🎯 [ELEVENLABS->SERVER] Processing webhook for job 65ea2d13-49c5-469a-af0d-5fec87f9e8c4 segment 0
+📋 [ELEVENLABS->SERVER] Found job 65ea2d13-49c5-469a-af0d-5fec87f9e8c4, current status: created
+Unhandled error: TypeError: job.transcriptions.find is not a function
+    at /home/runner/workspace/server/routes/webhooks.js:149:34
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/workspace/node_modules/router/lib/route.js:157:13)
+    at rawParser (/home/runner/workspace/node_modules/body-parser/lib/types/raw.js:43:7)
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/workspace/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/runner/workspace/node_modules/router/lib/route.js:117:3)
+    at handle (/home/runner/workspace/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/workspace/node_modules/router/lib/layer.js:152:17)
+    at /home/runner/workspace/node_modules/router/index.js:295:15
