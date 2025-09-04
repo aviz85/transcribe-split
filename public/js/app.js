@@ -209,7 +209,9 @@ class TranscribeApp {
             this.showSegmentUploadProgress(segment.index);
             
             // Convert blob to array buffer
+            console.log(`🔍 [UPLOAD] Processing segment ${segment.index}, blob size: ${segment.blob?.size || 0}, type: ${segment.blob?.type || 'unknown'}`);
             const arrayBuffer = await segment.blob.arrayBuffer();
+            console.log(`🔍 [UPLOAD] ArrayBuffer created, size: ${arrayBuffer.byteLength} bytes`);
             
             // Create XMLHttpRequest to track upload progress
             const uploadPromise = new Promise((resolve, reject) => {

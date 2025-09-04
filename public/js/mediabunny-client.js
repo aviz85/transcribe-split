@@ -30,7 +30,9 @@ class MediaBunnyProcessor {
                 index: 0,
                 startTime: 0,
                 endTime: 900, // Estimate 15min
-                size: file.size
+                size: file.size,
+                mimeType: 'audio/mpeg',
+                filename: file.name || 'audio.mp3'
             }];
         }
         
