@@ -389,11 +389,29 @@
         
         console.log('✅ [SETUP] MediaBunny loaded as module');
         
-        // Test basic MP3 support (may be false until encoder loads)
+        // Load MP3 encoder right after MediaBunny loads
         window.addEventListener('load', async () => {
-            if (window.MediaBunny?.canEncodeAudio) {
-                const initialSupport = await window.MediaBunny.canEncodeAudio('mp3');
-                console.log('🔍 [SETUP] Initial MP3 support:', initialSupport);
+            // Load MP3 encoder script dynamically
+            try {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@mediabunny/mp3-encoder@1.13.2/dist/bundles/mediabunny-mp3-encoder.js';
+                script.onload = async () => {
+                    console.log('🎵 [SETUP] MP3 encoder script loaded');
+                    if (window.MediaBunnyMp3Encoder?.registerMp3Encoder) {
+                        window.MediaBunnyMp3Encoder.registerMp3Encoder();
+                        console.log('✅ [SETUP] MP3 encoder registered');
+                        
+                        // Test support
+                        if (window.MediaBunny?.canEncodeAudio) {
+                            const mp3Support = await window.MediaBunny.canEncodeAudio('mp3');
+                            console.log('🔍 [SETUP] MP3 support after encoder:', mp3Support);
+                        }
+                    }
+                };
+                script.onerror = (e) => console.error('❌ [SETUP] Failed to load MP3 encoder:', e);
+                document.head.appendChild(script);
+            } catch (error) {
+                console.error('❌ [SETUP] Error loading MP3 encoder:', error);
             }
         });
     </script>

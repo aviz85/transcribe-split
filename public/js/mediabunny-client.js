@@ -61,17 +61,49 @@ class MediaBunnyProcessor {
 
             const { sampleRate, numberOfChannels } = audioTrack;
             
-            // Always use WAV with lower quality settings to reduce file size
-            // Since ElevenLabs accepts both MP3 and WAV, we can use compressed WAV
-            const outputFormat = new WavOutputFormat();
-            const fileExtension = 'wav';
-            const mimeType = 'audio/wav';
-            const mp3Supported = false; // Force WAV for now
+            // Try to use MP3 with fallback to WAV
+            let outputFormat, fileExtension, mimeType, mp3Supported;
+            
+            try {
+                // Test MP3 support first
+                mp3Supported = await canEncodeAudio('mp3').catch(() => false);
+                
+                if (!mp3Supported) {
+                    // Try to register MP3 encoder if available
+                    console.log('🔄 [MEDIABUNNY] MP3 not supported, checking for encoder...');
+                    
+                    // Simple MP3 encoder registration attempt
+                    if (window.MediaBunnyMp3Encoder?.registerMp3Encoder) {
+                        console.log('🎵 [MEDIABUNNY] Found MP3 encoder, registering...');
+                        window.MediaBunnyMp3Encoder.registerMp3Encoder();
+                        // Test again after registration
+                        mp3Supported = await canEncodeAudio('mp3').catch(() => false);
+                        console.log('🔍 [MEDIABUNNY] MP3 support after registration:', mp3Supported);
+                    }
+                }
+                
+                if (mp3Supported) {
+                    outputFormat = new Mp3OutputFormat();
+                    fileExtension = 'mp3';
+                    mimeType = 'audio/mpeg';
+                } else {
+                    outputFormat = new WavOutputFormat();
+                    fileExtension = 'wav';
+                    mimeType = 'audio/wav';
+                }
+            } catch (error) {
+                console.warn('⚠️ [MEDIABUNNY] Error checking MP3 support:', error);
+                // Fallback to WAV
+                mp3Supported = false;
+                outputFormat = new WavOutputFormat();
+                fileExtension = 'wav';
+                mimeType = 'audio/wav';
+            }
 
             console.log('MediaBunny encoding options:', {
                 mp3Supported,
                 format: fileExtension.toUpperCase(),
-                sampleRate: '16kHz',
+                sampleRate: mp3Supported ? '44.1kHz + 128kbps' : '16kHz WAV',
                 channels: 'Mono',
                 expectedSizeReduction: '75%',
                 expectedSize: `~${Math.round(totalDuration / 60 * 0.7)}MB (compressed)`
@@ -114,10 +146,10 @@ class MediaBunnyProcessor {
                         end: endTime
                     },
                     audio: {
-                        sampleRate: 16000, // Even lower sample rate (16kHz - phone quality)
-                        numberOfChannels: 1, // Force mono to reduce file size by half
-                        bitDepth: 16, // Standard 16-bit depth
-                        forceTranscode: true // Force re-encoding to apply compression
+                        sampleRate: mp3Supported ? 44100 : sampleRate, // Standard quality for MP3, original for WAV
+                        numberOfChannels: Math.min(numberOfChannels, 2), // Stereo max
+                        bitrate: mp3Supported ? 128000 : undefined, // 128kbps for MP3 only
+                        forceTranscode: true // Force re-encoding
                     }
                 });
 
