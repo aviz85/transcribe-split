@@ -24,7 +24,7 @@ class MediaBunnyProcessor {
         const isMP3 = file.type === 'audio/mpeg' || file.name.toLowerCase().endsWith('.mp3');
         if (isMP3 && file.size < 25 * 1024 * 1024) { // Under 25MB (roughly 15min MP3)
             console.log(`🎯 [PROCESSING] MP3 file (${Math.round(file.size/1024/1024)}MB) - using directly without conversion!`);
-            this.onProgress?.({ stage: 'ready', progress: 100 });
+            this.onProgress?.({ stage: 'complete', progress: 1.0 });
             return [{
                 blob: file,
                 index: 0,
